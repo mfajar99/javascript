@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Getter dan Setter</title>
+   </head>
+   <body>
+      <script>
+
+         // Membuat objek 'person' dengan properti dan metode akses
+         const person = {
+            firstName: "Fajar", // Nama depan
+            lastName: "Muhammad", // Nama belakang
+
+            // Getter untuk properti 'fullName'
+            get fullName() {
+               // Mengembalikan nama lengkap dengan menggabungkan 'firstName' dan 'lastName'
+               return `${this.firstName} ${this.lastName}`;
+            },
+
+            // Setter untuk properti 'fullName'
+            set fullName(value) {
+               // Memisahkan string 'value' menjadi array berdasarkan spasi
+               const array = value.split(" ");
+               // Menetapkan 'firstName' dan 'lastName' berdasarkan elemen array
+               this.firstName = array[0];
+               this.lastName = array[1];
+            }
+         };
+
+         // Menggunakan setter untuk mengubah 'fullName' menjadi "Salam Anggara"
+         person.fullName = "Salam Anggara";
+         // Menampilkan objek 'person' dalam bentuk tabel
+         console.table(person);
+         // Output: { firstName: 'Salam', lastName: 'Anggara' }
+
+         // Menggunakan setter untuk mengubah 'fullName' menjadi "Andi Law"
+         person.fullName = "Andi Law";
+         // Menampilkan objek 'person' dalam bentuk tabel
+         console.table(person);
+         // Output: { firstName: 'Andi', lastName: 'Law' }
+
+         // Menggunakan setter untuk mengubah 'fullName' menjadi "Muhammad Fajar"
+         person.fullName = "Muhammad Fajar";
+         // Menampilkan objek 'person' dalam bentuk tabel
+         console.table(person);
+         // Output: { firstName: 'Muhammad', lastName: 'Fajar' }
+      </script>
+   </body>
+</html>

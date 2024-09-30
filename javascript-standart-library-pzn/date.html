@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Date</title>
+   </head>
+   <body>
+      <script>
+         {
+            // Create date objects
+            const date1 = new Date();
+            console.log(date1); // Current date and time
+
+            const date2 = new Date(2020, 10, 10);
+            console.log(date2); // November 10, 2020 (months are 0-indexed)
+
+            const date3 = new Date(2020, 10, 10, 1, 0, 0, 0);
+            console.log(date3); // November 10, 2020 at 01:00:00 AM
+
+            const data4 = new Date(1721189706682);
+            console.log(data4); // Date corresponding to the timestamp 1721189706682
+         }
+
+         {
+            // Epoch & Unix timestamp
+            const date1 = new Date();
+            console.log(date1.getTime()); // Current timestamp in milliseconds since January 1, 1970
+
+            const date2 = new Date(2020, 10, 10);
+            console.log(date2.getTime()); // Timestamp for November 10, 2020
+
+            const date3 = new Date(2020, 10, 10, 1, 0, 0, 0);
+            console.log(date3.getTime()); // Timestamp for November 10, 2020 at 01:00:00 AM
+
+            const data4 = new Date(1721189706682);
+            console.log(data4.getTime()); // Timestamp corresponding to the date 1721189706682
+
+            console.log(Date.now()); // Current timestamp in milliseconds since January 1, 1970
+         }
+
+         {
+            // Date parsing
+            const time = Date.parse("2020-12-18T10:10:10.123+07:00");
+            console.log(time); // Timestamp for the given ISO date string
+
+            const date = new Date(time);
+            console.log(date); // Date object corresponding to the parsed timestamp
+         }
+
+         {
+            // Date setter & getter
+            const date = new Date();
+            date.setFullYear(2020);
+
+            console.log(date.getFullYear()); // 2020
+            console.log(date.getMonth()); // 0-indexed month (0 = January, 11 = December)
+            console.log(date.getDate()); // Day of the month
+            console.log(date.getHours()); // Hour of the day (24-hour format)
+            console.log(date.getMinutes()); // Minutes past the hour
+            console.log(date.getSeconds()); // Seconds past the minute
+            console.log(date.getMilliseconds()); // Milliseconds past the second
+            console.log(date.getTimezoneOffset()); // Timezone offset in minutes from UTC
+         }
+      </script>
+   </body>
+</html>

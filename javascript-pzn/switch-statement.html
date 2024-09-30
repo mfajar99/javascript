@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Switch Statement</title>
+   </head>
+   <body>
+      <script>
+         const nilai = "E"; // Mendeklarasikan variabel nilai dengan string "E"
+
+         switch (nilai) {
+            case "A":
+               // Jika nilai adalah "A", tampilkan pesan "Wow Anda Lulus Degan Baik"
+               document.writeln("<p>Wow Anda Lulus Degan Baik</p>");
+               break; // Menghentikan eksekusi case ini dan keluar dari switch
+            case "B":
+            case "C":
+               // Jika nilai adalah "B" atau "C", tampilkan pesan "Anda Lulus"
+               document.writeln("<p>Anda Lulus</p>");
+               break; // Menghentikan eksekusi case ini dan keluar dari switch
+            case "D":
+               // Jika nilai adalah "D", tampilkan pesan "Anda Tidak Lulus"
+               document.writeln("<p>Anda Tidak Lulus</p>");
+               break; // Menghentikan eksekusi case ini dan keluar dari switch
+            default:
+               // Jika nilai tidak cocok dengan kasus manapun di atas, tampilkan pesan "Mungkin Anda Salah Jurusan"
+               document.writeln("<p>Mungkin Anda Salah Jurusan</p>");
+         }
+      </script>
+   </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Label</title>
+   </head>
+   <body>
+      <script>
+                  // Memulai loop luar dengan label 'loopi'
+         loopi:
+         for (let i = 0; i < 100; i++) {
+             // Memulai loop dalam dengan label 'loopj'
+            loopj:
+            for (let j = 0; j < 10; j++) {
+                 // Jika nilai j lebih besar dari 10, maka lanjutkan ke iterasi berikutnya dari loop luar 'loopi'
+               if (j > 10) {
+                     continue loopi;
+               }
+                 // Menampilkan nilai i dan j pada konsol
+               console.info(`${i} - ${j}`);
+            }
+         }
+      </script>
+   </body>
+</html>

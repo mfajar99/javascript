@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Object</title>
+   </head>
+   <body>
+      <script>
+         // Constructor function untuk membuat objek Person
+         function Person(firstName, lastName) {
+            // Properti firstName dan lastName ditetapkan berdasarkan parameter
+            this.firstName = firstName;
+            this.lastName = lastName;
+
+            // Method sayHello ditambahkan ke objek Person
+            this.sayHello = function(name) {
+               console.info(`Hello ${name}, my name is ${this.firstName}`);
+            };
+         }
+
+         // Membuat instance baru dari Person dengan nama "Fajar" dan "Muhammad"
+         const fajar = new Person("Fajar", "Muhammad");
+         fajar.sayHello("Joko"); // Memanggil method sayHello pada objek fajar
+
+         // Membuat instance baru dari Person dengan nama "Budi" dan "Aja"
+         const budi = new Person("Budi", "Aja");
+         budi.sayHello("Joko"); // Memanggil method sayHello pada objek budi
+
+         // Menampilkan objek fajar dan budi di konsol
+         console.log(fajar); // Menampilkan properti dan method dari objek fajar
+         console.log(budi); // Menampilkan properti dan method dari objek budi
+      </script>
+   </body>
+</html>

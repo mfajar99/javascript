@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Event Global</title>
+   </head>
+   <body>
+      <input id="clickMe" type="button" value="Click Me!" />
+
+      <script>
+         // Mengambil elemen dengan ID "clickMe" dari dokumen HTML
+         const button = document.getElementById("clickMe");
+
+         // Menetapkan fungsi yang akan dijalankan ketika tombol diklik
+         button.onclick = function (){
+            // Mengatur atribut "value" dari elemen tombol menjadi "You Already Click Me!"
+            button.setAttribute("value", "You Already Click Me!");
+         };
+
+         // Menetapkan fungsi baru yang akan dijalankan ketika tombol diklik
+         button.onclick = function() {
+            // Menampilkan pesan 'Button di Click' ke konsol
+            console.log('Button di Click');
+         };
+      </script>
+   </body>
+</html>

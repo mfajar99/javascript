@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Async</title>
+   </head>
+   <body>
+      <script>
+         // Fungsi yang mengembalikan Promise yang menyelesaikan dengan string
+         function getNamePromise() {
+            return new Promise(function (resolve, reject) {
+               // Menyelesaikan Promise dengan string "Fajar Muhammad"
+               resolve("Fajar Muhammad");
+            });
+         }
+
+         // Fungsi async yang mengembalikan string secara langsung
+         async function getNameAsync() {
+            // Fungsi async secara otomatis mengembalikan Promise yang diselesaikan dengan nilai yang dikembalikan
+            return "Fajar Async";
+         }
+
+         // Menggunakan .then() untuk menangani Promise yang dikembalikan oleh getNamePromise
+         getNamePromise()
+             .then((name) => console.info(name)); // Output: Fajar Muhammad
+
+         // Menggunakan .then() untuk menangani Promise yang dikembalikan oleh getNameAsync
+         getNameAsync()
+             .then((name) => console.info(name)); // Output: Fajar Async
+      </script>
+   </body>
+</html>

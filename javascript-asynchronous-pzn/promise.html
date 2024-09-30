@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Promise</title>
+   </head>
+   <body>
+      <script>
+         const promise = new Promise(function (resolve, reject) {
+         // Membuat instance XMLHttpRequest
+         const ajax = new XMLHttpRequest();
+
+         // Mengatur permintaan GET ke URL produk
+         ajax.open("GET", "api/product.json");
+
+         // Menetapkan fungsi callback untuk menangani respons saat permintaan selesai
+         ajax.onload = function () {
+            if (ajax.status === 200) {
+               // Menyelesaikan Promise dengan respons teks jika status sukses (200 OK)
+               resolve(ajax.responseText);
+            } else {
+               // Menolak Promise dengan pesan kesalahan jika status tidak sukses
+               reject(`Error Get Product with response: ${ajax.responseText}`);
+            }
+         };
+
+            // Mengirim permintaan
+            ajax.send();
+         });
+
+         // Menampilkan objek Promise di konsol
+         console.info(promise);
+      </script>
+   </body>
+</html>

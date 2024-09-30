@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Module Object</title>
+   </head>
+   <body>
+      <script type="module">
+         // Mengimpor semua ekspor dari file module-object.js sebagai objek bernama 'fajar'
+         import * as fajar from "./scripts/module-object.js";
+
+         // Menampilkan nilai dari ekspor 'firstName', 'middleName', dan 'lastName' dari modul
+         console.log(fajar.firstName);  // Menampilkan nilai dari ekspor bernama 'firstName'
+         console.log(fajar.middleName); // Menampilkan nilai dari ekspor bernama 'middleName'
+         console.log(fajar.lastName);   // Menampilkan nilai dari ekspor bernama 'lastName'
+
+         // Memanggil fungsi 'hello' yang diekspor dari modul
+         fajar.hello(); // Memanggil fungsi 'hello' dari modul yang diimpor
+
+         // Membuat instance baru dari kelas 'Person' yang diekspor dari modul
+         const person = new fajar.Person(); // Membuat objek baru dari kelas 'Person'
+      </script>
+   </body>
+</html>

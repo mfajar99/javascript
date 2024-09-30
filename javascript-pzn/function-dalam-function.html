@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Function Dalam Function</title>
+   </head>
+   <body>
+      <script>
+         function outer() {
+         // Fungsi 'inner' didefinisikan di dalam fungsi 'outer', jadi ini adalah fungsi dalam (inner function)
+         function inner() {
+            console.info("Inner"); // Menampilkan teks "Inner" di konsol
+         }
+
+            // Memanggil fungsi 'inner' dua kali
+            inner();
+            inner();
+         }
+
+         // Memanggil fungsi 'outer', yang pada gilirannya akan memanggil fungsi 'inner' dua kali
+         outer();
+
+         // Mencoba memanggil fungsi 'inner' di luar 'outer' akan menghasilkan error
+         // Error: Uncaught ReferenceError: inner is not defined
+         // Karena fungsi 'inner' hanya bisa diakses dari dalam fungsi 'outer'
+         inner();
+      </script>
+   </body>
+</html>

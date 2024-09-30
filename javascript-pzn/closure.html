@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Closure</title>
+   </head>
+   <body>
+      <script>
+         function createAdder(value) {
+         // Variabel owner yang hanya dapat diakses dalam fungsi createAdder dan add
+         const owner = "Fajar";
+
+         // Fungsi add yang merupakan closure; mengakses variabel owner dan value dari lingkup luar
+         function add(param) {
+         // Mencetak nilai owner yang berasal dari lingkup createAdder
+         console.info(owner);
+         // Mengembalikan hasil penjumlahan dari value (dari lingkup createAdder) dan param (argumen fungsi add)
+         return value + param;
+         }
+
+         // Mengembalikan fungsi add yang sekarang terikat dengan nilai 'value' dari createAdder
+         return add;
+         }
+
+         // Membuat fungsi baru addTwo yang menambahkan 2 pada argumen yang diberikan
+         const addTwo = createAdder(2);
+         // Fungsi addTwo(param) sekarang sama seperti:
+         // function addTwo(param) {
+         //    console.info("Fajar"); // Mencetak 'Fajar' karena ini adalah nilai 'owner' dalam createAdder
+         //    return 2 + param; // Menambahkan 2 pada argumen 'param'
+         // }
+         console.info(addTwo(10)); // Output: "Fajar" lalu 12
+         console.info(addTwo(20)); // Output: "Fajar" lalu 22
+
+         // Membuat fungsi baru addTen yang menambahkan 10 pada argumen yang diberikan
+         const addTen = createAdder(10);
+         // Fungsi addTen(param) sekarang sama seperti:
+         // function addTen(param) {
+         //    console.info("Fajar"); // Mencetak 'Fajar' karena ini adalah nilai 'owner' dalam createAdder
+         //    return 10 + param; // Menambahkan 10 pada argumen 'param'
+         // }
+         console.info(addTen(10)); // Output: "Fajar" lalu 20
+         console.info(addTen(20)); // Output: "Fajar" lalu 30
+      </script>
+   </body>
+</html>

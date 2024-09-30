@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Constructor Inheritance</title>
+   </head>
+   <body>
+      <script>
+         // Constructor function Person
+         function Person(firstName, lastName) {
+            // Menambahkan property instance
+            this.firstName = firstName;
+            this.lastName = lastName;
+
+            // Menambahkan method ke instance object
+            this.sayHello = function(name) {
+               console.info(`Hello ${name}, My Name is ${this.firstName}`);
+            }
+         }
+
+         // Menambahkan method ke prototype Person
+         Person.prototype.sayBye = function() {
+            console.info("Good Bye");
+         }
+
+         Person.prototype.run = function() {
+            console.info(`${this.firstName} is running`);
+         }
+
+         // Membuat instance dari Person
+         const fajar = new Person("Fajar", "Muhammad");
+         const budi = new Person("Budi", "Aja");
+
+         // Menampilkan objek fajar dan budi
+         console.info(fajar);
+         console.info(budi);
+
+         // Memanggil method sayHello yang ada di instance
+         fajar.sayHello("Joko");
+
+         // Memanggil method sayBye yang ada di prototype
+         fajar.sayBye();
+
+         // Memanggil method run yang ada di prototype
+         budi.run();
+      </script>
+   </body>
+</html>

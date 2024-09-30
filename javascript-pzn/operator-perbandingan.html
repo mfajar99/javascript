@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Operator Perbandingan</title>
+   </head>
+   <body>
+      <script>
+         // Menggunakan operator perbandingan untuk membandingkan nilai
+
+         // Menggunakan operator == (sama dengan) untuk perbandingan yang mengabaikan tipe data
+         let result = 5 == "5"; // true, karena == membandingkan nilai setelah melakukan konversi tipe data
+         document.writeln("<p>" + result + "</p>"); // Menampilkan <p>true</p>
+
+         // Menggunakan operator === (identik dengan) untuk perbandingan yang memperhatikan tipe data
+         result = 5 === "5"; // false, karena === membandingkan nilai dan tipe data secara ketat (number !== string)
+         document.writeln("<p>" + result + "</p>"); // Menampilkan <p>false</p>
+
+         // Menggunakan operator !== (tidak identik dengan) untuk membandingkan nilai dan tipe data dengan negasi
+         result = 5 !== "5"; // true, karena 5 (number) dan "5" (string) memiliki tipe data yang berbeda
+         document.writeln("<p>" + result + "</p>"); // Menampilkan <p>true</p>
+
+         // Menggunakan operator != (tidak sama dengan) untuk perbandingan yang mengabaikan tipe data
+         result = 5 != "5"; // false, karena != membandingkan nilai setelah melakukan konversi tipe data
+         document.writeln("<p>" + result + "</p>"); // Menampilkan <p>false</p>
+
+         // Menggunakan operator > (lebih besar dari) untuk perbandingan nilai
+         result = 5 > 10; // false, karena 5 tidak lebih besar dari 10
+         document.writeln("<p>" + result + "</p>"); // Menampilkan <p>false</p>
+
+         // Menggunakan operator < (kurang dari) untuk perbandingan nilai
+         result = 5 < 10; // true, karena 5 lebih kecil dari 10
+         document.writeln("<p>" + result + "</p>"); // Menampilkan <p>true</p>
+      </script>
+   </body>
+</html>

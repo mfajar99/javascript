@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Number</title>
+   </head>
+   <body>
+      <script>
+         // Mengonversi string menjadi angka
+         const input = "12345";
+         const number = Number(input); // Mengonversi string "12345" menjadi angka 12345
+
+         // Menampilkan tipe data dari variabel 'input' dan 'number'
+         console.log(typeof input); // Output: string
+         console.log(typeof number); // Output: number
+
+         // Menampilkan nilai dari variabel 'number'
+         console.log(number); // Output: 12345
+
+         // Mengonversi string yang tidak dapat diubah menjadi angka (hasilnya NaN)
+         console.log(Number("salah")); // Output: NaN
+
+         // Menampilkan batas nilai terkecil dan terbesar yang bisa direpresentasikan dengan tipe Number
+         console.log(Number.MIN_VALUE); // Output: 5e-324 (nilai terkecil yang dapat direpresentasikan)
+         console.log(Number.MAX_VALUE); // Output: 1.7976931348623157e+308 (nilai terbesar yang dapat direpresentasikan)
+
+         // Menampilkan batas nilai integer yang aman untuk digunakan
+         console.log(Number.MIN_SAFE_INTEGER); // Output: -9007199254740991
+         console.log(Number.MAX_SAFE_INTEGER); // Output: 9007199254740991
+
+         // Menampilkan nilai NaN dari objek Number
+         console.log(Number.NaN); // Output: NaN
+
+         // Menggunakan metode statis Number.isInteger() dan Number.isNaN()
+         const data = Number("Fajar"); // Mengonversi string "Fajar" menjadi NaN
+         console.log(Number.isInteger(data)); // Mengecek apakah 'data' adalah bilangan bulat (Output: false)
+         console.log(Number.isNaN(data)); // Mengecek apakah 'data' adalah NaN (Output: true)
+
+         // Menggunakan metode instance dari objek Number
+         const value = Number(12345); // Membuat objek Number dengan nilai 12345
+         console.info(value.toString(2)); // Mengonversi angka 12345 ke dalam format biner (Output: "11000000111001")
+         console.info(value.toLocaleString("id-ID")); // Mengonversi angka 12345 ke format string lokal Indonesia (Output: "12.345")
+      </script>
+   </body>
+</html>

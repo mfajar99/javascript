@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Popup Alert</title>
+   </head>
+   <body>
+      <script>
+         // Metode alert digunakan untuk menampilkan pesan kepada pengguna
+         // alert("Selamat Belajar Javascript Dasar");
+
+         // Metode prompt digunakan untuk meminta input dari pengguna
+         // const name = prompt("Siapa Nama Anda?");
+         // // Menyimpan input pengguna ke dalam variabel name
+
+         // Menampilkan pesan yang menyapa pengguna menggunakan input dari prompt
+         // alert(`Hello ${name}`);
+
+         // Metode confirm digunakan untuk menampilkan dialog konfirmasi kepada pengguna
+         const masuk = confirm("Anda yakin mau masuk?");
+         // Mengembalikan true jika pengguna mengklik "OK", atau false jika mengklik "Cancel"
+
+         // Memeriksa hasil konfirmasi
+         if (masuk) {
+            // Jika pengguna mengklik "OK"
+            const name = prompt("Siapa Nama Anda");
+            // Meminta nama pengguna
+            alert(`Hello ${name}`);
+            // Menampilkan pesan yang menyapa pengguna menggunakan input dari prompt
+            } else {
+            // Jika pengguna mengklik "Cancel"
+            alert("Bye bye");
+            // Menampilkan pesan perpisahan
+         }
+      </script>
+   </body>
+</html>

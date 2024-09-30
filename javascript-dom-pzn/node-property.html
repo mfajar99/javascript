@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Node Property</title>
+   </head>
+   <body>
+      <ul id="menu">
+         <li id="first">First</li>
+         <li id="second">Second</li>
+         <li id="third">Third</li>
+      </ul>
+
+      <script>
+         // Mengambil elemen dengan ID "menu" dari dokumen HTML
+         const menu = document.getElementById("menu");
+
+         // Menampilkan elemen "menu" ke konsol
+         console.log(menu);
+
+         // Menampilkan koleksi semua node anak dari elemen "menu" ke konsol
+         console.log(menu.childNodes);
+
+         // Mengambil elemen dengan ID "second" dari dokumen HTML
+         const second = document.getElementById("second");
+
+         // Menampilkan elemen "second" ke konsol
+         console.log(second);
+
+         // Menampilkan teks konten dari elemen "second" ke konsol
+         console.log(second.textContent);
+
+         // Menampilkan node saudara sebelumnya dari elemen "second" ke konsol
+         console.log(second.previousSibling.previousSibling);
+
+         // Menampilkan node saudara berikutnya dari elemen "second" ke konsol
+         console.log(second.nextSibling.nextSibling);
+      </script>
+   </body>
+</html>

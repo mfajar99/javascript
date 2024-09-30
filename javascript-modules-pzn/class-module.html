@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Class Module</title>
+   </head>
+   <body>
+      <script type="module">
+         // Mengimpor kelas Person dari modul lain
+         import { Person } from "./scripts/class.js";
+
+         // Membuat objek dari kelas Person
+         const person = new Person("Fajar"); // Membuat instance baru dari kelas Person dengan nama "Fajar"
+
+         // Menggunakan metode sayHello dari objek person
+         person.sayHello("Joko"); // Memanggil metode sayHello dari objek person, menyapa "Joko" dengan nama "Fajar"
+      </script>
+   </body>
+</html>

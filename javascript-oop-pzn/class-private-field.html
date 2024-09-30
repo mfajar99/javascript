@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Class Private Field</title>
+   </head>
+   <body>
+      <script>
+         // Mendefinisikan kelas 'Counter' dengan properti privat
+         class Counter {
+            // Mendeklarasikan properti privat '#counter' dengan nilai awal 0
+            #counter = 0;
+
+            // Metode untuk menambah nilai '#counter' sebanyak 1
+            increment() {
+               this.#counter++;
+            }
+
+            // Metode untuk mengurangi nilai '#counter' sebanyak 1
+            decrement() {
+               this.#counter--;
+            }
+
+            // Metode untuk mendapatkan nilai saat ini dari '#counter'
+            get() {
+               return this.#counter;
+            }
+         }
+
+         // Membuat instance baru dari kelas 'Counter'
+         const counter = new Counter();
+
+         // Menambah nilai '#counter' sebanyak 5 kali
+         counter.increment();
+         counter.increment();
+         counter.increment();
+         counter.increment();
+         counter.increment();
+
+         // Menampilkan nilai saat ini dari '#counter'
+         console.info(counter.get()); // Output: 5
+
+         // Mencoba mengatur nilai '#counter' secara langsung (ini tidak akan mempengaruhi nilai '#counter' karena '#counter' adalah properti privat)
+         counter.counter = 100;
+
+         // Menampilkan objek 'counter' di konsol
+         console.info(counter);
+      </script>
+   </body>
+</html>

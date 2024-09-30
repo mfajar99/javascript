@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>With Module</title>
+      <script type="module" src="scripts/say.js"></script>
+   </head>
+   <body>
+      <script type="module">
+         // Mengimpor fungsi 'sayHello' dan 'sayGoodBy' dari file say.js
+         import {sayHello, sayGoodBy} from "./scripts/say.js";
+
+         // Memanggil fungsi 'sayHello' dengan argumen "Fajar"
+         sayHello("Fajar"); // Fungsi ini akan menampilkan pesan sapaan untuk "Fajar"
+
+         // Memanggil fungsi 'sayGoodBy' dengan argumen "Fajar"
+         sayGoodBy("Fajar"); // Fungsi ini akan menampilkan pesan perpisahan untuk "Fajar"
+      </script>
+   </body>
+</html>

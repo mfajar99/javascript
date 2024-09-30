@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Class Constructor</title>
+   </head>
+   <body>
+      <script>
+         // Mendefinisikan kelas 'Person'
+         class Person {
+            constructor(name) {
+               // Menampilkan pesan saat objek baru dibuat
+               console.info(`Membuat person ${name}`);
+            }
+         }
+
+         // Membuat instance baru dari kelas 'Person' dengan nama "Fajar"
+         const fajar = new Person("Fajar");
+         // Menampilkan objek 'fajar' di konsol
+         console.info(fajar);
+
+         // Membuat instance baru dari kelas 'Person' dengan nama "Andi"
+         const andi = new Person("Andi");
+      </script>
+   </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Class Super Constructor</title>
+   </head>
+   <body>
+      <script>
+         // Mendefinisikan kelas 'Employee'
+         class Employee {
+            // Konstruktor kelas 'Employee' yang menerima parameter 'firstName'
+            constructor(firstName) {
+               this.firstName = firstName; // Mengatur properti 'firstName' dari objek
+            }
+
+            // Metode untuk menyapa dengan nama
+            sayHello(name) {
+               console.info(`Hello ${name}, my name is employee ${this.firstName}`);
+            }
+         }
+
+         // Mendefinisikan kelas 'Manager' yang mewarisi dari 'Employee'
+         class Manager extends Employee {
+            // Konstruktor kelas 'Manager' yang menerima parameter 'firstName' dan 'lastName'
+            constructor(firstName, lastName) {
+               super(firstName); // Memanggil konstruktor dari kelas 'Employee' untuk mengatur 'firstName'
+               this.lastName = lastName; // Mengatur properti 'lastName' dari objek
+            }
+
+            // Metode untuk menyapa dengan nama, override dari kelas 'Employee'
+            sayHello(name) {
+               console.info(`Hello ${name}, my name is manager ${this.firstName} ${this.lastName}`);
+            }
+         }
+
+         // Membuat instance baru dari kelas 'Employee' dengan nama depan "Budi"
+         const budi = new Employee("Budi");
+         // Memanggil metode 'sayHello' dari objek 'budi'
+         budi.sayHello("Joko");
+
+         // Membuat instance baru dari kelas 'Manager' dengan nama depan "Fajar" dan nama belakang "Muhammad"
+         const fajar = new Manager("Fajar", "Muhammad");
+         // Memanggil metode 'sayHello' dari objek 'fajar'
+         fajar.sayHello("Joko");
+
+         // Menampilkan objek 'fajar' di konsol
+         console.info(fajar);
+         // Menampilkan objek 'budi' di konsol
+         console.info(budi);
+      </script>
+   </body>
+</html>

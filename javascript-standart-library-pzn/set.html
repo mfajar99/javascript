@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Set</title>
+   </head>
+   <body>
+      <script>
+         // Membuat sebuah Set kosong
+         const set = new Set();
+
+         // Menambahkan elemen ke dalam Set
+         set.add("Fajar");
+         set.add("Fajar");  // Tidak akan ditambahkan lagi karena Set hanya menyimpan elemen unik
+         set.add("Muhammad");
+         set.add("Amir");
+
+         // Menampilkan Set ke console
+         // Output: Set(3) { 'Fajar', 'Muhammad', 'Amir' }
+         // Meskipun kita mencoba menambahkan "Fajar" dua kali, Set hanya menyimpan elemen unik
+         console.log(set);
+
+         // Menggunakan forEach untuk iterasi setiap elemen dalam Set
+         // Set tidak memiliki indeks, hanya elemen yang unik
+         set.forEach((value) => console.log(value));
+         // Output:
+         // Fajar
+         // Muhammad
+         // Amir
+      </script>
+   </body>
+</html>

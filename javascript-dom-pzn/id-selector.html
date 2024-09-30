@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Class Selector</title>
+   </head>
+   <body>
+      <ul>
+         <li class="menuItem">First</li>
+         <li id="menu2">Second</li>
+         <li class="menuItem">Third</li>
+      </ul>
+
+      <script>
+         // Mengambil semua elemen dengan ID "menu2" dari dokumen HTML
+         const menuItems = document.querySelectorAll("#menu2");
+
+         // Menampilkan NodeList dari elemen-elemen yang diambil ke konsol
+         console.log(menuItems);
+      </script>
+   </body>
+</html>

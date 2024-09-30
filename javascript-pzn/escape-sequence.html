@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Escape Sequence</title>
+   </head>
+   <body>
+      <script>
+         // Membuka elemen <textarea> dengan ukuran kolom 100 dan baris 10
+         document.writeln("<textarea cols='100' rows='10'>");
+
+         // Menulis beberapa baris teks ke dalam <textarea>
+         document.write("Muhammad \nFajar\n"); // Menulis teks dengan baris baru
+         document.write("\\Home\\fajar\n"); // Menulis teks dengan backslash yang di-escape
+         document.write("\"Programmer Kampung\"\n"); // Menulis teks dengan tanda kutip ganda yang di-escape
+         document.write('\'Belajar Javascript\'\n'); // Menulis teks dengan tanda kutip tunggal yang di-escape
+
+         // Menutup elemen <textarea>
+         document.writeln("</textarea>");
+      </script>
+   </body>
+</html>

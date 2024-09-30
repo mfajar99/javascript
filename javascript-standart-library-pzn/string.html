@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>String</title>
+   </head>
+   <body>
+      <script>
+         const name = "Muhammad Fajar Amir";
+
+         // Menggunakan properti length untuk mengetahui panjang string
+         console.log(name.length);
+         // Output: 19 (jumlah karakter dalam string, termasuk spasi)
+
+         // Menggunakan metode toLowerCase() untuk mengubah semua huruf menjadi huruf kecil
+         console.log(name.toLowerCase());
+         // Output: "muhammad fajar amir"
+
+         // Menggunakan metode toUpperCase() untuk mengubah semua huruf menjadi huruf besar
+         console.log(name.toUpperCase());
+         // Output: "MUHAMMAD FAJAR AMIR"
+
+         // Menggunakan metode split() untuk memisahkan string menjadi array berdasarkan karakter tertentu (dalam hal ini, spasi)
+         console.log(name.split(" "));
+         // Output: ["Muhammad", "Fajar", "Amir"]
+         // Split membagi string berdasarkan spasi dan mengembalikan array dari kata-kata dalam string
+
+         // Contoh menggunakan trim() untuk menghilangkan spasi di awal dan akhir string
+         const input = "   input data   ";
+
+         // Menggunakan trim() untuk menghapus spasi di awal dan akhir string
+         console.info(input.trim());
+         // Output: "input data"
+
+         // Memastikan bahwa string asli tidak berubah (trim() tidak memodifikasi string, hanya mengembalikan versi yang sudah di-trim)
+         console.info(input);
+         // Output: "   input data   " (string asli tetap memiliki spasi di awal dan akhir)
+      </script>
+   </body>
+</html>

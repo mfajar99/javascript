@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Function Sebagai Value</title>
+   </head>
+   <body>
+      <script>
+         // Fungsi 'sayHello' menerima satu parameter 'name' dan menampilkan pesan
+         function sayHello(name) {
+            document.writeln(`<p>Hello ${name}</p>`); // Menampilkan pesan "Hello [name]" ke dokumen HTML
+         }
+
+         // Memanggil fungsi 'sayHello' dengan argumen "Andi"
+         // Output: Hello Andi
+         sayHello("Andi");
+
+         // Menyimpan referensi ke fungsi 'sayHello' dalam variabel 'say'
+         const say = sayHello;
+
+         // Memanggil fungsi melalui variabel 'say' dengan argumen "Budi"
+         // Fungsi 'say' merujuk pada 'sayHello', jadi hasilnya sama seperti memanggil 'sayHello'
+         say("Budi");
+         // Output: Hello Budi
+
+         // Fungsi 'giveMeName' menerima fungsi sebagai parameter (callback)
+         function giveMeName(callback) {
+             // Memanggil fungsi yang diterima sebagai parameter dengan argumen "Fajar"
+             callback("Fajar"); // Sama dengan memanggil 'sayHello("Fajar")'
+         }
+
+         // Memanggil fungsi 'giveMeName' dengan 'sayHello' sebagai argumen
+         giveMeName(sayHello);
+         // Output: Hello Fajar
+
+         // Memanggil fungsi 'giveMeName' dengan variabel 'say' sebagai argumen
+         // Variabel 'say' merujuk pada 'sayHello', jadi hasilnya sama dengan memanggil 'sayHello'
+         giveMeName(say);
+         // Output: Hello Fajar
+      </script>
+   </body>
+</html>

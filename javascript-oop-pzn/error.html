@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Error</title>
+   </head>
+   <body>
+      <script>
+         // Kelas MathUtil dengan metode statis untuk menjumlahkan angka
+         class MathUtil {
+
+         // Metode statis sum untuk menjumlahkan parameter yang diberikan
+         static sum(...numbers) {
+            // Jika tidak ada angka yang diberikan, lemparkan error
+            if (numbers.length === 0) {
+               throw new Error("Total parameter harus lebih dari 0");
+            }
+
+            // Variabel untuk menyimpan total jumlah
+            let total = 0;
+            // Menjumlahkan semua angka yang diberikan
+            for (const number of numbers) {
+               total += number;
+            }
+            return total;
+            }
+         }
+
+         // Menampilkan hasil dari pemanggilan metode sum tanpa parameter, yang akan menyebabkan error
+         console.info(MathUtil.sum()); // Ini akan melemparkan error dan tidak akan melanjutkan ke baris berikutnya
+         console.info("Fajar"); // Baris ini tidak akan dijalankan karena error sebelumnya
+
+         // Menghitung jumlah dari angka 1, 1, 1, 1, 1 menggunakan metode sum dan menampilkan hasilnya
+         const result = MathUtil.sum(1, 1, 1, 1, 1);
+         console.info(result); // Menampilkan hasil penjumlahan: 5
+      </script>
+   </body>
+</html>

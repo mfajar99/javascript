@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Strict Mode</title>
+   </head>
+   <body>
+      <script>
+         function useStrictMode() {
+            'use strict'; // Mengaktifkan mode ketat (strict mode) di dalam fungsi ini
+
+            const person = {
+               firstName: "Fajar" // Mendeklarasikan objek dengan properti firstName
+            };
+
+            // Mengakses properti secara langsung dari objek person
+            console.info(person.firstName); // Output: "Fajar"
+         }
+
+         // Memanggil fungsi useStrictMode
+         useStrictMode();
+      </script>
+   </body>
+</html>

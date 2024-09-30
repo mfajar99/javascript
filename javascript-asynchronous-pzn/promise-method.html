@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Promise</title>
+   </head>
+   <body>
+      <table>
+         <tbody>
+            <tr>
+               <td>Id :</td>
+               <td id="id"></td>
+            </tr>
+            <tr>
+               <td>Name :</td>
+               <td id="name"></td>
+            </tr>
+            <tr>
+               <td>Price :</td>
+               <td id="price"></td>
+            </tr>
+         </tbody>
+      </table>
+      <script>
+         // Fungsi untuk mengambil data produk berdasarkan nama produk
+         function getProduct(product) {
+             // Mengembalikan Promise yang akan menyelesaikan dengan data produk atau menolak dengan pesan kesalahan
+            return new Promise(function (resolve, reject) {
+               const ajax = new XMLHttpRequest();
+               ajax.open("GET", `api/${product}.json`); // Membuka permintaan GET ke URL produk
+               ajax.onload = function () {
+                  if (ajax.status === 200) {
+                        // Menyelesaikan Promise dengan respons teks jika status sukses
+                        resolve(ajax.responseText);
+                  } else {
+                        // Menolak Promise dengan pesan kesalahan jika status bukan 200
+                        reject(`Error Get Product with response: ${ajax.status}`);
+                  }
+               };
+               ajax.send(); // Mengirim permintaan
+            });
+         }
+
+         // Memanggil fungsi getProduct dan menangani hasilnya
+         getProduct("product")
+            .then(function (response) {
+               // Mengurai respons JSON
+               return JSON.parse(response);
+            })
+            .then(function (json) {
+               // Memperbarui elemen HTML dengan data produk
+               document.getElementById("id").textContent = json.id;
+               document.getElementById("name").textContent = json.name;
+               document.getElementById("price").textContent = json.price;
+            })
+            .catch(function (error) {
+               // Menangani kesalahan dan menampilkan pesan kesalahan di elemen HTML
+               document.getElementById("id").textContent = error;
+               document.getElementById("name").textContent = error;
+               document.getElementById("price").textContent = error;
+            })
+            .finally(function () {
+               // Menampilkan pesan di konsol setelah semua operasi selesai
+               console.info("Finally");
+            });
+      </script>
+   </body>
+</html>

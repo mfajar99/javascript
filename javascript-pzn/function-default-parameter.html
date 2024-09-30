@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Function Default Parameter</title>
+   </head>
+   <body>
+      <script>
+         function register(name, gender = "UNKNOWN") {
+         // Fungsi 'register' dengan dua parameter: 'name' dan 'gender'
+         // 'gender' memiliki nilai default "UNKNOWN" jika tidak ada nilai yang diberikan
+         console.info(name); // Menampilkan nilai 'name' di konsol
+         console.info(gender); // Menampilkan nilai 'gender' di konsol
+         }
+
+         // Memanggil fungsi 'register' tanpa argumen
+         // 'name' tidak diisi, sehingga menjadi 'undefined'
+         // 'gender' tidak diisi, sehingga menggunakan nilai default "UNKNOWN"
+         register();
+         // Output:
+         // undefined
+         // UNKNOWN
+
+         // Memanggil fungsi 'register' dengan hanya satu argumen
+         // 'name' diisi dengan "Fajar"
+         // 'gender' tidak diisi, sehingga menggunakan nilai default "UNKNOWN"
+         register("Fajar");
+         // Output:
+         // Fajar
+         // UNKNOWN
+
+         // Memanggil fungsi 'register' dengan dua argumen
+         // 'name' diisi dengan "Fajar"
+         // 'gender' diisi dengan "MALE", menggantikan nilai default
+         register("Fajar", "MALE");
+         // Output:
+         // Fajar
+         // MALE
+
+         // Memanggil fungsi 'register' dengan 'name' dan 'gender' yang diset undefined
+         // 'name' diisi dengan "Fajar"
+         // 'gender' diisi dengan 'undefined', tetapi karena nilai yang diberikan adalah 'undefined', maka tetap menggunakan nilai default "UNKNOWN"
+         register("Fajar", undefined);
+         // Output:
+         // Fajar
+         // UNKNOWN
+
+         // Memanggil fungsi 'register' dengan 'name' dan 'gender' yang diset null
+         // 'name' diisi dengan "Fajar"
+         // 'gender' diisi dengan 'null', yang berarti 'gender' secara eksplisit diisi 'null' (bukan 'undefined'), jadi tidak menggunakan nilai default
+         register("Fajar", null);
+         // Output:
+         // Fajar
+         // null
+      </script>
+   </body>
+</html>

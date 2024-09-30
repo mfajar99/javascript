@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Function Parameter</title>
+   </head>
+   <body>
+      <script>
+         // Membuat fungsi dengan parameter
+         // Fungsi 'sayHello' menerima dua parameter: 'firstName' dan 'lastName'
+         function sayHello(firstName, lastName) {
+             // Menampilkan pesan "Hello" yang diikuti oleh 'firstName' dan 'lastName'
+             // Pesan ditulis ke dalam dokumen HTML sebagai paragraf
+            document.writeln(`<p>Hello ${firstName} ${lastName}</p>`);
+         }
+
+         // Memanggil fungsi 'sayHello' dengan argumen "Muhammad" dan "Fajar"
+         // 'firstName' akan menjadi "Muhammad" dan 'lastName' akan menjadi "Fajar"
+         sayHello("Muhammad", "Fajar");
+         // Output di halaman web:
+         // Hello Muhammad Fajar
+
+         // Memanggil fungsi 'sayHello' dengan argumen "Salam" dan "Anggara"
+         // 'firstName' akan menjadi "Salam" dan 'lastName' akan menjadi "Anggara"
+         sayHello("Salam", "Anggara");
+         // Output di halaman web:
+         // Hello Salam Anggara
+      </script>
+   </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Array</title>
+   </head>
+   <body>
+      <script>
+         {  // Array Loop
+            const array = ["Muhammad", "Fajar", "Amir"];
+
+            // Menggunakan forEach dengan fungsi biasa
+            array.forEach(function (value, index) {
+               console.info(`${index} : ${value}`);
+            });
+
+            // Menggunakan forEach dengan arrow function
+            array.forEach((value, index) => console.log(`${index} : ${value}`));
+
+            // Menggunakan forEach dengan arrow function untuk hanya nilai
+            array.forEach(value => console.log(`${value}`));
+         }
+
+         {
+            // Array Queue (FIFO: First In First Out)
+            const queue = [];
+
+            queue.push("Muhammad");
+            queue.push("Fajar");
+            queue.push("Amir");
+
+            // Mengambil elemen dari antrian (queue)
+            console.log(queue.shift()); // "Muhammad"
+            console.log(queue.shift()); // "Fajar"
+            console.log(queue.shift()); // "Amir"
+            console.log(queue.shift()); // undefined (karena antrian kosong)
+         }
+
+         {
+            // Array Stack (LIFO: Last In First Out)
+            const stack = [];
+
+            stack.push("Muhammad");
+            stack.push("Fajar");
+            stack.push("Amir");
+
+            // Mengambil elemen dari stack
+            console.log(stack.pop()); // "Amir"
+            console.log(stack.pop()); // "Fajar"
+            console.log(stack.pop()); // "Muhammad"
+            console.log(stack.pop()); // undefined (karena stack kosong)
+         }
+
+         {
+            // Array Search
+            const source = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+
+            // Mencari nilai pertama yang lebih besar dari 3
+            console.info(source.find(value => value > 3)); // 4
+
+            // Mencari index nilai pertama yang lebih besar dari 3
+            console.info(source.findIndex(value => value > 3)); // 3
+
+            // Mengecek apakah array mengandung nilai 7
+            console.info(source.includes(7)); // false
+
+            // Menemukan index pertama dari nilai 5
+            console.info(source.indexOf(5)); // 4
+
+            // Menemukan index terakhir dari nilai 5
+            console.info(source.lastIndexOf(5)); // 9
+         }
+
+         {
+            // Array Filter
+            const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+            // Memfilter angka ganjil
+            const ganjil = numbers.filter(value => value % 2 === 1);
+
+            // Memfilter angka genap
+            const genap = numbers.filter(value => value % 2 === 0);
+
+            console.log(numbers); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            console.log(ganjil);  // [1, 3, 5, 7, 9]
+            console.log(genap);   // [2, 4, 6, 8, 10]
+         }
+
+         {
+            // Array Transform
+            const names = ["Muhammad", "Fajar", "Amir"];
+
+            // Mengubah semua nama menjadi huruf kapital
+            const namesUpper = names.map(value => value.toUpperCase());
+            console.log(namesUpper); // ["MUHAMMAD", "FAJAR", "AMIR"]
+
+            // Menggabungkan semua nama menjadi satu string dengan spasi
+            const namesReduce = names.reduce((before, value) => before + " " + value);
+            console.log(namesReduce); // "Muhammad Fajar Amir"
+
+            // Menggabungkan semua nama menjadi satu string dengan spasi, mulai dari kanan
+            const namesRight = names.reduceRight((before, value) => before + " " + value);
+            console.log(namesRight); // "Amir Fajar Muhammad"
+
+            // Menghitung total dari array angka
+            const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            const total = numbers.reduce((before, value) => before + value);
+            console.log(total); // 55
+         }
+      </script>
+   </body>
+</html>

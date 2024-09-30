@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>String Template</title>
+   </head>
+   <body>
+      <script>
+         const name = "Muhammad Fajar";
+         const firstName = "Muhammad";
+         const lastName = "Fajar";
+
+         // Menggunakan template literals (cara baru)
+         const template = `Name : ${firstName} ${lastName}`; // Template literals memungkinkan interpolasi variabel di dalam string
+         // Menggunakan concatenation (cara lama)
+         const lama = "Name : " + firstName + " " + lastName; // Menggabungkan string dengan operator +
+
+         // Menampilkan hasil di konsol
+         console.info(template); // Output: "Name : Muhammad Fajar"
+
+         // Menggunakan template literals untuk evaluasi ekspresi
+         const nilai = 50;
+         const template2 = `Name : ${name}, Lulus : ${nilai > 70}`; // Mengevaluasi ekspresi di dalam template literals
+
+         // Menampilkan hasil di konsol
+         console.info(template2); // Output: "Name : Muhammad Fajar, Lulus : false"
+
+         // Menggunakan template literals untuk multiline strings
+         const multiline = `
+         Nama saya Fajar,
+         Sekarang belum kerja,
+         Sering Koding dan tidur`;
+
+         // Menampilkan hasil multiline string di dokumen HTML
+         document.writeln("<pre>");
+         document.writeln(multiline); // Menampilkan multiline string dengan format yang dipertahankan
+         document.writeln("</pre>");
+      </script>
+   </body>
+</html>

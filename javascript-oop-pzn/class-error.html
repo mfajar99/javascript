@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Class Erorr</title>
+   </head>
+   <body>
+      <script>
+         // Mendefinisikan kelas custom untuk menangani kesalahan
+         class ValidationError extends Error {
+               constructor(message, field) {
+               // Memanggil konstruktor kelas induk (Error) dengan pesan kesalahan
+               super(message);
+               // Menyimpan informasi tambahan tentang field yang menyebabkan kesalahan
+               this.field = field;
+            }
+         }
+
+         // Mendefinisikan kelas utilitas matematika
+         class MathUtil {
+            // Metode statis untuk menjumlahkan sejumlah angka
+            static sum(...numbers) {
+               // Memeriksa apakah ada parameter yang diberikan
+               if (numbers.length === 0) {
+                  // Jika tidak ada parameter, lemparkan kesalahan custom
+                  throw new ValidationError("Total parameter harus lebih dari 0", "numbers");
+               }
+
+               // Menghitung total dari semua angka yang diberikan
+               let total = 0;
+               for (const number of numbers) {
+                  total += number;
+               }
+               return total;
+            }
+         }
+
+         try {
+            // Mencoba memanggil metode sum tanpa parameter
+            console.info(MathUtil.sum());
+            console.info("Fajar");
+         } catch (error) {
+            // Menangani kesalahan yang terjadi
+            if (error instanceof ValidationError) {
+               // Jika kesalahan adalah ValidationError, tampilkan pesan kesalahan khusus
+               console.info(`Terjadi error di field ${error.field} dengan error ${error.message}`);
+            } else {
+               // Menangani kesalahan lainnya
+               console.info(`Terjadi error : ${error.message}`);
+            }
+         } finally {
+               // Bagian ini akan selalu dijalankan, terlepas dari apakah ada kesalahan atau tidak
+               console.info("Program selesai");
+            }
+
+         // Baris ini akan dijalankan setelah blok try-catch-finally selesai
+         console.info("Muhammad");
+      </script>
+   </body>
+</html>

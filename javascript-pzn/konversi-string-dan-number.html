@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Konversi Strin dan Number</title>
+   </head>
+   <body>
+      <script>
+                  // Mengonversi string "1" menjadi integer menggunakan parseInt
+         const value1 = parseInt("1");
+
+         // Mendefinisikan variabel dengan nilai integer 1
+         const value2 = 1;
+
+         // Menjumlahkan value1 dan value2
+         const sum = value1 + value2;
+
+         // Menampilkan hasil penjumlahan dalam elemen <p> di dokumen HTML
+         document.writeln(`<p>${sum}</p>`);
+
+         // Menampilkan hasil konversi string "1.9" ke integer menggunakan parseInt
+         document.writeln(`<p>${parseInt("1.9")}</p>`);
+
+         // Menampilkan hasil konversi string "1.1" ke floating-point number menggunakan parseFloat
+         document.writeln(`<p>${parseFloat("1.1")}</p>`);
+
+         // Menampilkan hasil konversi string "1.1" ke number menggunakan Number
+         document.writeln(`<p>${Number("1.1")}</p>`);
+
+         // Mengonversi nilai a dan b ke string dan menggabungkannya
+         const a = 1;
+         const b = 1;
+         const total = a.toString() + b.toString();
+
+         // Menampilkan hasil penggabungan string a dan b
+         document.writeln(`<p>${total}</p>`);
+
+         // Menampilkan hasil konversi string "1salah" ke integer menggunakan parseInt
+         // parseInt akan mengabaikan karakter non-digit setelah angka pertama
+         document.writeln(`<p>${parseInt("1salah")}</p>`);
+
+         // Menampilkan hasil konversi string "1.1fajar" ke floating-point number menggunakan parseFloat
+         // parseFloat akan mengabaikan karakter non-digit setelah angka pertama
+         document.writeln(`<p>${parseFloat("1.1fajar")}</p>`);
+
+         // Menampilkan hasil konversi string "1salah" ke number menggunakan Number
+         // Number("1salah") tidak dapat dikonversi menjadi number yang valid, hasilnya adalah NaN
+         document.writeln(`<p>${Number("1salah")}</p>`);
+
+         // Menampilkan hasil konversi string "a1.1fajar" ke number menggunakan Number
+         // Number("a1.1fajar") tidak dapat dikonversi menjadi number yang valid, hasilnya adalah NaN
+         document.writeln(`<p>${Number("a1.1fajar")}</p>`);
+
+         // Menampilkan hasil konversi string "salah" ke number menggunakan Number
+         // Number("salah") tidak dapat dikonversi menjadi number yang valid, hasilnya adalah NaN
+         document.writeln(`<p>${Number("salah")}</p>`);
+
+         // Mengonversi string "salah" menjadi number, hasilnya adalah NaN
+         const first = Number("salah");
+
+         // Menjumlahkan NaN (Not-a-Number) dengan 100
+         const totalNumber = first + 100;
+
+         // Menampilkan hasil penjumlahan NaN + 100, yang tetap NaN
+         document.writeln(`<p>${totalNumber}</p>`);
+
+         // Menampilkan hasil pemeriksaan apakah first adalah NaN
+         document.writeln(`<p>${isNaN(first)}</p>`);
+
+         // Menampilkan hasil pemeriksaan apakah 100 adalah NaN
+         document.writeln(`<p>${isNaN(100)}</p>`);
+
+         // Menampilkan hasil pemeriksaan apakah NaN adalah NaN
+         document.writeln(`<p>${isNaN(NaN)}</p>`);
+      </script>
+   </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Class Super Method</title>
+   </head>
+   <body>
+      <script>
+         // Mendefinisikan kelas 'Shape'
+         class Shape {
+            // Metode 'paint' yang akan menampilkan pesan di konsol
+            paint() {
+               console.info("Paint Shape");
+            }
+         }
+
+         // Mendefinisikan kelas 'Circle' yang mewarisi dari kelas 'Shape'
+         class Circle extends Shape {
+            // Metode 'paint' yang menggantikan metode 'paint' dari kelas 'Shape'
+            paint() {
+               console.info("Paint Circle");
+            }
+         }
+
+         // Membuat instance baru dari kelas 'Circle'
+         const circle = new Circle();
+         // Memanggil metode 'paint' dari objek 'circle'
+         circle.paint();
+      </script>
+   </body>
+</html>

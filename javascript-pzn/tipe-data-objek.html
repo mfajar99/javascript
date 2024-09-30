@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Tipa Data Objek</title>
+   </head>
+   <body>
+      <script>
+         // Mendefinisikan objek person dengan properti
+         const person = {
+             "nama": "Muhammad Fajar",  // Properti nama
+             alamat: "Indonesia",       // Properti alamat
+             umur: 27                   // Properti umur
+         }
+
+         // Mengakses properti objek person dan menampilkan ke konsol
+         console.info(`Nama : ${person.nama}`);    // Mengakses dan menampilkan properti nama
+         console.info(`Alamat : ${person.alamat}`); // Mengakses dan menampilkan properti alamat
+         console.info(`Umur : ${person.umur}`);     // Mengakses dan menampilkan properti umur
+
+         // Menghapus properti umur dari objek person
+         delete person["umur"];
+
+         // Menampilkan tabel objek person setelah penghapusan
+         console.table(person);
+      </script>
+   </body>
+</html>

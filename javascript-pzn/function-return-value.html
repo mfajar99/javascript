@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Function Return Value</title>
+   </head>
+   <body>
+      <script>
+                 // Membuat fungsi dengan parameter dan mengembalikan nilai
+         function sayHello(firstName, lastName) {
+             // Menggabungkan 'firstName' dan 'lastName' ke dalam string
+            const say = `Hello ${firstName} ${lastName}`;
+            // Mengembalikan string yang telah digabungkan
+            return say;
+         }
+
+         // Memanggil fungsi 'sayHello' dengan argumen "Muhammad" dan "Fajar"
+         // Menyimpan nilai yang dikembalikan oleh fungsi ke dalam variabel 'result'
+         const result = sayHello("Muhammad", "Fajar");
+         // Menampilkan hasilnya di dokumen HTML
+         document.writeln(`<p>${result}</p>`); // Output: Hello Muhammad Fajar
+
+         // Fungsi untuk menentukan nilai akhir berdasarkan rentang nilai
+         function getFinalValue(value) {
+            // Mengembalikan huruf sesuai dengan rentang nilai
+            if (value > 90) {
+               return "A";
+            } else if (value > 80) {
+               return "B";
+            } else if (value > 70) {
+               return "C";
+            } else if (value > 60) {
+               return "D";
+            } else {
+               return "E";
+            }
+         }
+
+         // Memanggil fungsi 'getFinalValue' dengan argumen 95
+         // Menyimpan nilai yang dikembalikan oleh fungsi ke dalam variabel 'finalValue'
+         const finalValue = getFinalValue(95);
+         // Menampilkan hasilnya di dokumen HTML
+         document.writeln(`<p>${finalValue}</p>`); // Output: A
+
+         // Fungsi untuk memeriksa apakah nilai tertentu ada dalam array
+         function isContains(array, searchValue) {
+            // Loop melalui setiap elemen dalam array
+            for (const element of array) {
+               console.info(`Iterasi Element ${element}`);
+               // Jika elemen sama dengan 'searchValue', kembalikan true
+               if (element === searchValue) {
+                  return true;
+               }
+            }
+            // Jika tidak ditemukan, kembalikan false
+            return false;
+         }
+
+         // Array yang akan diperiksa
+         const array = [1, 32, 343, 434, 21, 32, 323, 112, 12];
+         // Nilai yang dicari dalam array
+         const search = 21;
+         // Memanggil fungsi 'isContains' untuk memeriksa apakah 'search' ada dalam 'array'
+         // Menyimpan hasilnya dalam variabel 'found'
+         const found = isContains(array, search);
+         // Menampilkan hasilnya di dokumen HTML
+         document.writeln(`<p>${found}</p>`); // Output: true
+      </script>
+   </body>
+</html>

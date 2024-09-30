@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Operator Instanceof</title>
+   </head>
+   <body>
+      <script>
+         // Definisi class Employee
+         class Employee {
+         // Class ini saat ini kosong, tidak memiliki properti atau method
+         }
+
+         // Definisi class Manager yang mewarisi dari Employee
+         class Manager extends Employee {
+            // Class ini juga saat ini kosong, mewarisi semua dari Employee
+         }
+
+         // Membuat instance baru dari Employee
+         const fajar = new Employee();
+         // Membuat instance baru dari Manager
+         const budi = new Manager();
+
+         // Menampilkan tipe dari fajar dan budi di konsol
+         console.info(typeof fajar); // Menampilkan "object" karena fajar adalah objek
+         console.info(typeof budi);  // Menampilkan "object" karena budi adalah objek
+
+         // Memeriksa apakah fajar adalah instance dari Employee
+         console.info(fajar instanceof Employee); // Menampilkan true karena fajar adalah instance dari Employee
+
+         // Memeriksa apakah budi adalah instance dari Employee
+         console.info(budi instanceof Employee); // Menampilkan true karena budi adalah instance dari Employee
+      </script>
+   </body>
+</html>

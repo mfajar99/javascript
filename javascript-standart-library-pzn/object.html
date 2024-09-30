@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Object</title>
+   </head>
+   <body>
+      <script>
+         {
+             // Contoh penggunaan Object.freeze dan Object.seal
+            const person = {
+               firstName : "Fajar",
+               lastName : "Muhammad"
+            }
+
+             // Object.freeze(person);
+             // Object.freeze membekukan object sehingga:
+             // 1. Properti tidak bisa diubah.
+             // 2. Tidak bisa menambah properti baru.
+             // 3. Properti tidak bisa dihapus.
+
+             // Object.seal(person);
+             // Object.seal menyegel object sehingga:
+             // 1. Properti yang ada bisa diubah.
+             // 2. Tidak bisa menambah properti baru.
+             // 3. Properti yang ada tidak bisa dihapus.
+
+            Object.seal(person);
+
+            // Mengubah nilai dari properti yang ada (diperbolehkan oleh Object.seal)
+            person.firstName = "Budi";
+
+            // Menambah properti baru (tidak diperbolehkan oleh Object.seal)
+            person.middleName = "Andi";
+
+            // Menghapus properti yang ada (tidak diperbolehkan oleh Object.seal)
+            delete person.lastName;
+
+            // Output: { firstName: "Budi", lastName: "Muhammad" }
+            // Karena Object.seal mencegah penghapusan dan penambahan properti,
+            // hanya perubahan pada firstName yang berhasil.
+            console.log(person);
+         }
+
+         {
+            // Contoh penggunaan Object.assign
+            const target = {
+               firstName : "Fajar"
+            }
+
+            const source = {
+               lastName : "Muhammad"
+            }
+
+            // Object.assign menyalin semua properti dari satu atau lebih objek sumber (source)
+            // ke dalam objek target. Dalam kasus ini, properti lastName ditambahkan ke target.
+            Object.assign(target, source);
+
+            // Output: { firstName: "Fajar", lastName: "Muhammad" }
+            console.log(target);
+
+            // Output: { lastName: "Muhammad" }
+            console.log(source);
+         }
+
+         {
+            // Contoh penggunaan Object.values dan Object.getOwnPropertyNames
+            const person = {
+               firstName: "Fajar",
+               lastName: "Muhammad"
+            };
+
+            // Object.values akan mengembalikan array yang berisi semua nilai properti dari object
+            // Output: ["Fajar", "Muhammad"]
+            console.log(Object.values(person));
+
+            // Object.getOwnPropertyNames akan mengembalikan array yang berisi semua nama properti
+            // (key) dari object.
+            // Output: ["firstName", "lastName"]
+            console.log(Object.getOwnPropertyNames(person));
+         }
+      </script>
+   </body>
+</html>

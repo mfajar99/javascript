@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Web Worker</title>
+   </head>
+   <body>
+      <button id="buttonTask">Click Me</button>
+
+      <script>
+         // Membuat instance Web Worker dengan skrip yang bernama "worker.js"
+         const worker = new Worker("worker.js");
+
+         // Menambahkan event listener untuk menangani pesan yang diterima dari worker
+         worker.addEventListener("message", function (message) {
+            // Menampilkan data yang diterima dari worker ke konsol
+            console.info(message.data);
+         });
+
+         // Menetapkan fungsi untuk dijalankan saat tombol dengan ID "buttonTask" diklik
+         document.getElementById("buttonTask").onclick = function () {
+            // Mengirimkan pesan (nilai 100000) ke worker untuk diproses
+            worker.postMessage(100000);
+         }
+      </script>
+   </body>
+</html>

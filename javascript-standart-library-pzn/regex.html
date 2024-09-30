@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Regex</title>
+   </head>
+   <body>
+      <script>
+         {
+            // Membuat regex dengan beberapa cara berbeda
+
+            // Cara pertama, menggunakan literal regex
+            const regex1 = /fajar/;
+
+            // Cara kedua, menggunakan konstruktor RegExp
+            const regex2 = new RegExp("fajar");
+
+            // Cara ketiga, menggunakan literal regex di dalam konstruktor RegExp
+            const regex3 = new RegExp(/fajar/);
+         }
+
+         {
+            // Contoh cara menggunakan regex untuk mencari kata dalam string
+
+            const name = "fajar muhammad fajar amir";
+            const regex = /fajar/;
+
+            // Menggunakan exec() untuk mencari kecocokan pertama dalam string
+            const result = regex.exec(name);
+            console.log(result);  // Output: ["fajar", index: 0, input: "fajar muhammad fajar amir"]
+
+            // Jika tidak ada kecocokan, exec() akan mengembalikan null
+            console.log(regex.exec("tidak ada"));  // Output: null
+
+            // Menggunakan test() untuk memeriksa apakah string mengandung kecocokan
+            const test = regex.test(name);
+            console.log(test);  // Output: true (karena ada "fajar" dalam string)
+
+            // Jika tidak ada kecocokan, test() akan mengembalikan false
+            console.log(regex.test("tidak ada"));  // Output: false
+         }
+
+         {
+            // Penggunaan modifier dalam regex (g, i, m)
+
+            const name = "fajar muhammad\nFajar amir\nBudi Muhammad";
+
+            // Modifier 'i' untuk pencarian case-insensitive, 'g' untuk global (semua kecocokan), 'm' untuk multiline
+            const regex1 = /^fajar/igm;  // ^ digunakan untuk mencari kecocokan di awal baris
+            const regex2 = /Muhammad/ig; // Mencari kata "Muhammad" dengan case-insensitive dan global
+
+            let result;
+
+            // Menggunakan exec() untuk mencari semua kecocokan dengan modifier global 'g'
+            while ((result = regex1.exec(name)) !== null) {
+               console.log(result);  // Mencari "fajar" di awal setiap baris
+            }
+
+            while ((result = regex2.exec(name)) !== null) {
+               console.log(result);  // Mencari "Muhammad" di seluruh teks
+            }
+         }
+
+         {
+            // Contoh penggunaan advanced regex (karakter kelas)
+
+            const regex = /fa[iouae]/ig;  // Mencari "fa" diikuti dengan salah satu huruf vokal (i, o, u, a, e)
+
+            const name = "fajar fai fao fau faa fae ";
+            let result;
+
+            // Menggunakan exec() untuk menemukan semua kecocokan
+            while ((result = regex.exec(name)) !== null) {
+               console.log(result);  // Output setiap kecocokan dengan pola "fa" + vokal
+            }
+         }
+
+         {
+            // Metode tambahan dengan regex: match, search, replace, replaceAll, dan split
+
+            const name = "fajar fai fao fau faa fae ";
+
+            // match() mengembalikan semua kecocokan
+            console.log(name.match(/fa[iouae]/ig));  // Output: ["fai", "fao", "fau", "faa", "fae"]
+
+            // search() mengembalikan index dari kecocokan pertama
+            console.log(name.search(/fa[iouae]/ig));  // Output: 6 (index dari kecocokan pertama)
+
+            // replace() mengganti kecocokan pertama dengan string baru
+            console.log(name.replace(/fa[iouae]/i, "kamu"));  // Output: "fajar kamu fao fau faa fae"
+
+            // replaceAll() mengganti semua kecocokan dengan string baru
+            console.log(name.replaceAll(/fa[iouae]/ig, "kamu"));  // Output: "fajar kamu kamu kamu kamu kamu "
+
+            // split() memisahkan string berdasarkan pola regex
+            console.log(name.split(/f/ig));  // Output: ["", "ajar ", "ai ", "ao ", "au ", "aa ", "ae "]
+         }
+      </script>
+   </body>
+</html>

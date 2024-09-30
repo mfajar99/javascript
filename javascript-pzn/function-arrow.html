@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Function Arrow</title>
+   </head>
+   <body>
+      <script>
+                 // Definisi fungsi panah (arrow function) dengan blok kode
+         // Fungsi ini menerima satu parameter 'name' dan menulis pesan sapaan ke konsol.
+         // const sayHello = (name) => {
+         //    const say = `Hello ${name}`;
+         //    console.info(say);
+         // }
+         // Memanggil fungsi 'sayHello' dengan argumen "Fajar"
+         // sayHello("Fajar");
+
+         // Definisi fungsi panah tanpa blok kode
+         // Fungsi ini menerima satu parameter 'name' dan menulis pesan sapaan ke konsol secara langsung.
+         const sayHello2 = (name) => console.info(`Hello ${name}`);
+         sayHello2("Fajar"); // Output: Hello Fajar
+
+         // Fungsi panah yang mengembalikan nilai
+         // Fungsi ini menerima dua parameter 'first' dan 'second', lalu mengembalikan hasil penjumlahan keduanya.
+         const sum = (first, second) => first + second;
+         console.info(sum(10, 10)); // Output: 20
+
+         // Fungsi panah tanpa kurung pada parameter tunggal
+         // Fungsi ini juga menerima satu parameter 'name' dan menulis pesan sapaan ke konsol.
+         const sayHello = name => console.info(`Hello ${name}`);
+         sayHello("Fajar"); // Output: Hello Fajar
+
+         // Fungsi 'giveMeName' yang menerima fungsi callback sebagai parameter
+         // Fungsi ini memanggil callback yang diberikan dengan argumen "Fajar".
+         function giveMeName(callback) {
+            callback("Fajar");
+         }
+
+         // Memanggil 'giveMeName' dengan fungsi panah sebagai callback
+         // Callback ini menulis pesan sapaan ke konsol.
+         giveMeName((name) => console.info(`Hello ${name}`)); // Output: Hello Fajar
+
+         // Memanggil 'giveMeName' dengan fungsi anonim sebagai callback
+         // Fungsi anonim ini menulis pesan sapaan ke konsol.
+         // giveMeName(function (name) {
+         //    console.info(`Hello ${name}`);
+         // })
+      </script>
+   </body>
+</html>

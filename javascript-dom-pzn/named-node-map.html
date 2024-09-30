@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Namade Node Map</title>
+   </head>
+   <body>
+      <img id="logo" src="https://www.programmerzamannow.com/img/pzn.png" alt="PZN Logo" />
+      <script>
+         // Mengambil elemen dengan ID "logo" dari dokumen HTML
+         const logo = document.getElementById("logo");
+
+         // Mengambil daftar atribut dari elemen "logo"
+         const attributes = logo.attributes;
+
+         // Iterasi melalui semua atribut dan menampilkan nama dan nilainya ke konsol
+         for (const attribute of attributes) {
+            console.log(`${attribute.name} : ${attribute.value}`);
+         }
+      </script>
+   </body>
+</html>

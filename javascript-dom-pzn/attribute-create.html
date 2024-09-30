@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Attribute Create</title>
+   </head>
+   <body>
+      <img id="logo" alt="PZN Logo" />
+
+      <script>
+         // Mengambil elemen dengan ID "logo"
+         const logo = document.getElementById("logo");
+
+         // Membuat atribut baru dengan nama "src"
+         const src = document.createAttribute("src");
+
+         // Menetapkan nilai atribut "src" ke URL gambar
+         src.value = "https://programmerzamannow.com/img/pzn.png";
+
+         // Menambahkan atribut "src" ke elemen logo
+         logo.setAttributeNode(src);
+      </script>
+   </body>
+</html>

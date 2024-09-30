@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>For Of</title>
+   </head>
+   <body>
+      <script>
+         // Iterasi pada array
+         const names = ["Muhammad", "Fajar", "Amir"]; // Sebuah array berisi nama-nama
+         for (const name of names) {
+             // Loop untuk setiap elemen dalam array
+             document.writeln(`<p>${name}</p>`); // Menulis setiap nama di dalam tag <p> ke dokumen
+         }
+
+         // Iterasi pada string
+         const fullName = "Muhammad Fajar Amir"; // Sebuah string yang mewakili nama lengkap
+         for (const character of fullName) {
+             // Loop untuk setiap karakter dalam string
+             document.writeln(`<p>${character}</p>`); // Menulis setiap karakter di dalam tag <p> ke dokumen
+         }
+
+         // Iterasi pada objek (tidak memungkinkan karena objek bukan iterable dengan cara ini)
+         const person = {
+            firstName: "Muhammad",
+            lastName: "Fajar"
+         };
+         // Kode berikut akan menyebabkan error karena objek tidak bisa langsung diiterasi seperti array atau string
+         // for (const name of person) {
+         //     document.writeln(`<p>${name}</p>`);
+         // }
+         // Untuk melakukan iterasi pada properti objek, kamu perlu menggunakan pendekatan lain, seperti menggunakan loop `for...in` atau `Object.keys()`.
+      </script>
+   </body>
+</html>

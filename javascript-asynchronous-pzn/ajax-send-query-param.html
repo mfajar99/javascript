@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Ajax Send Query Param</title>
+   </head>
+   <body>
+      <form>
+         <label for="search">
+            Search :
+            <input type="search" id="search" name="search" />
+         </label>
+         <br />
+         <input type="button" id="searchButton" value="Search" />
+      </form>
+      <h1 id="response"></h1>
+      <script>
+         function doSearch(){
+            // Membuat instance baru dari XMLHttpRequest untuk melakukan permintaan AJAX
+            const ajax = new XMLHttpRequest();
+
+            // Membuat objek URLSearchParams untuk mengumpulkan parameter query dari form
+            const param = new URLSearchParams();
+            param.append("search", document.getElementById("search").value); // Menambahkan parameter pencarian
+            param.append("filter", document.getElementById("search").value); // Menambahkan parameter filter dengan nilai yang sama
+
+            // Membuka koneksi GET ke URL yang disediakan, dengan parameter query yang dikumpulkan
+            ajax.open("GET", `https://fajar.free.beeceptor.com?${param.toString()}`);
+
+            // Event handler yang dijalankan ketika server memberikan respons
+            ajax.onload = function(){
+               // Mendapatkan elemen HTML dengan id "response" untuk menampilkan respons dari server
+               const response = document.getElementById("response");
+
+               // Menampilkan teks respons dari server di dalam elemen HTML
+               response.innerHTML = ajax.responseText;
+            };
+
+            // Mengirim permintaan AJAX tanpa body (karena ini adalah permintaan GET)
+            ajax.send();
+         }
+
+         // Menambahkan event handler pada tombol dengan id "searchButton"
+         // Saat tombol diklik, fungsi doSearch akan dipanggil
+         document.getElementById("searchButton").onclick = doSearch;
+      </script>
+   </body>
+</html>

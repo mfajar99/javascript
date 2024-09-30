@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Function Generator</title>
+   </head>
+   <body>
+      <script>
+                 // Fungsi generator 'createNames' menghasilkan nilai secara berurutan menggunakan 'yield'
+         function* createNames() {
+             yield "Fajar";     // Menghasilkan nilai "Fajar"
+             yield "Muhammad";  // Menghasilkan nilai "Muhammad"
+             yield "Amir";      // Menghasilkan nilai "Amir"
+         }
+
+         // Menggunakan generator 'createNames' untuk membuat iterator 'names'
+         const names = createNames();
+         for (const name of names) {
+            // Loop melalui iterator 'names' dan menampilkan setiap nilai yang dihasilkan oleh generator
+            console.info(name);
+         }
+         // Output:
+         // Fajar
+         // Muhammad
+         // Amir
+
+         // Fungsi generator 'buatGanjil' untuk menghasilkan angka ganjil hingga nilai tertentu
+         // Ini adalah contoh generator 'lazy', menghasilkan nilai saat dibutuhkan
+         function* buatGanjil(value) {
+            for (let i = 1; i <= value; i++) {
+               if (i % 2 === 1) { // Memeriksa apakah 'i' adalah ganjil
+                  console.info(`Yield ${i}`); // Menampilkan informasi nilai yang dihasilkan
+                  yield i; // Menghasilkan nilai 'i' jika ganjil
+               }
+            }
+         }
+
+         // Fungsi 'buatGanjilArray' untuk membuat array angka ganjil hingga nilai tertentu
+         // Ini adalah contoh 'eager', menghasilkan semua nilai sekaligus dan menyimpannya dalam array
+         function buatGanjilArray(value) {
+            const result = [];
+            for (let i = 1; i <= value; i++) {
+               if (i % 2 === 1) { // Memeriksa apakah 'i' adalah ganjil
+                  console.info(`Yield ${i}`); // Menampilkan informasi nilai yang ditambahkan
+                  result.push(i); // Menambahkan nilai 'i' ke dalam array jika ganjil
+               }
+            }
+             return result; // Mengembalikan array hasil
+         }
+
+         const numbers = buatGanjil(100); // Membuat generator 'numbers' untuk angka ganjil hingga 100
+
+         // Menggunakan 'next()' untuk mendapatkan nilai berikutnya dari generator
+         console.info(numbers.next().value); // Menampilkan nilai ganjil pertama
+         console.info(numbers.next().value); // Menampilkan nilai ganjil kedua
+         console.info(numbers.next().value); // Menampilkan nilai ganjil ketiga
+         // Output:
+         // Yield 1
+         // 1
+         // Yield 3
+         // 3
+         // Yield 5
+         // 5
+      </script>
+   </body>
+</html>

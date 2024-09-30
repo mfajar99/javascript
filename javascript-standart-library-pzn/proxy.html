@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Proxy</title>
+   </head>
+   <body>
+      <script>
+         const target = {
+            middleName: "Muhammad"
+         };
+
+         // Handler object untuk menangani operasi get dan set pada target
+         const handler = {
+            // Fungsi get akan dieksekusi ketika properti diakses
+            get: function (target, property) {
+               // Menampilkan properti yang diakses ke console
+               console.log(`Access Property : ${property}`);
+               // Mengembalikan nilai properti yang diminta
+               return target[property];
+            },
+
+            // Fungsi set akan dieksekusi ketika ada perubahan atau penambahan properti
+            set: function (target, property, value) {
+               // Menampilkan properti yang diubah dan nilai baru ke console
+               console.log(`Change Property ${property} : ${value}`);
+
+               // Jika nilai properti adalah null, ganti dengan string kosong
+               if (value == null) {
+                  // throw new Error("Tidak boleh null");
+                  // Nilai null diganti dengan string kosong
+                  target[property] = "";
+               } else {
+                  // Jika bukan null, properti diubah dengan nilai baru
+                  target[property] = value;
+               }
+            }
+         };
+
+         // Membuat proxy yang mengawasi object target dengan handler yang sudah didefinisikan
+         const proxy = new Proxy(target, handler);
+
+         // Menambahkan properti baru "firstName" ke object melalui proxy
+         proxy.firstName = "Fajar";  // Akan memicu fungsi set di handler
+
+         // Mengubah properti "lastName" menjadi null melalui proxy
+         proxy.lastName = null;  // Akan memicu fungsi set dan mengganti null dengan ""
+
+         console.info(proxy.firstName);  // Akan memicu fungsi get
+         console.info(proxy.middleName); // Akan memicu fungsi get
+         console.info(proxy.lastName);   // Akan memicu fungsi get
+
+         // Menampilkan object target setelah modifikasi melalui proxy
+         console.info(target);
+
+         // Output:
+         // Change Property firstName : Fajar
+         // Change Property lastName : null
+         // Access Property : firstName
+         // Fajar
+         // Access Property : middleName
+         // Muhammad
+         // Access Property : lastName
+         //
+         // { middleName: 'Muhammad', firstName: 'Fajar', lastName: '' }
+      </script>
+   </body>
+</html>

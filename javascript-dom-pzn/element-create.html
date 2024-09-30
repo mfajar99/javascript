@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Element Create</title>
+   </head>
+   <body>
+      <div id="content" class="content"></div>
+
+      <script>
+         // Mengambil elemen dengan ID "content" dari dokumen HTML
+         const content = document.getElementById("content");
+
+         // Membuat elemen <h1> baru
+         const title = document.createElement("h1");
+         // Mengatur teks konten untuk elemen <h1>
+         title.textContent = "Belajar Javascript DOM";
+         // Menambahkan elemen <h1> ke elemen dengan ID "content"
+         content.appendChild(title);
+
+         // Membuat elemen <p> baru
+         const description = document.createElement("p");
+         // Mengatur teks konten untuk elemen <p>
+         description.textContent = "Selamat Belajar Javascript DOM";
+         // Menambahkan elemen <p> ke elemen dengan ID "content"
+         content.appendChild(description);
+      </script>
+   </body>
+</html>

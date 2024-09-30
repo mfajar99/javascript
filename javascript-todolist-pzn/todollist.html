@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Todolist</title>
+   </head>
+   <body>
+      <form name="todoForm">
+         <table>
+            <tbody>
+               <tr>
+                  <td><label for="todo">Todo: </label></td>
+                  <td><input type="text" id="todo" name="todo" /></td>
+               </tr>
+               <tr>
+                  <td></td>
+                  <td><input type="submit" value="Add" /></td>
+               </tr>
+            </tbody>
+         </table>
+      </form>
+
+      <h1>Todolist</h1>
+
+      <table>
+         <thead>
+            <tr>
+               <th><label for="search">Filter:</label></th>
+               <th><input type="text" id="search" name="search" /></th>
+            </tr>
+         </thead>
+         <tbody id="todolistBody">
+            <tr>
+               <td><input type="button" value="Done" /></td>
+               <td>Todo Description</td>
+            </tr>
+         </tbody>
+      </table>
+
+      <script>
+         // Inisialisasi array todolist dengan beberapa nilai awal
+         const todolist = [
+            "Belajar Javascript Dasar",
+            "Belajar Javascript Object Oriented Programming",
+            "Belajar Javascript Document Object Model"
+         ];
+
+         // Fungsi untuk membersihkan semua elemen dalam daftar ToDo dari tampilan HTML
+         function clearTodolist(){
+            const todolistBody = document.getElementById("todolistBody");
+
+            // Menghapus semua elemen anak dari elemen todolistBody
+            while(todolistBody.firstChild){
+               todolistBody.removeChild(todolistBody.firstChild);
+            }
+         }
+
+         // Fungsi untuk menghapus item dari array todolist berdasarkan indeks
+         function removeTodoLis(index){
+            // Menghapus 1 item pada posisi 'index' dari array todolist
+            todolist.splice(index, 1);
+
+            // Menampilkan kembali ToDo list setelah dihapus
+            displayTodolist();
+         }
+
+         // Fungsi untuk menambahkan elemen baru ke dalam tampilan HTML berdasarkan item ToDo
+         function addTodoList(index, todo){
+            // Membuat elemen <tr> untuk menampilkan item ToDo
+            const tr = document.createElement("tr");
+
+            // Membuat elemen <td> untuk tombol Done
+            const tdButton = document.createElement("td");
+            tr.appendChild(tdButton);
+
+            // Membuat tombol Done untuk menghapus item ToDo
+            const buttonDone = document.createElement("input");
+            buttonDone.type = "button";
+            buttonDone.value = "Done";
+
+            // Menambahkan event handler ke tombol Done untuk menghapus item ToDo berdasarkan indeks
+            buttonDone.onclick = function(){
+               removeTodoLis(index);
+            }
+            tdButton.appendChild(buttonDone);
+
+            // Membuat elemen <td> untuk menampilkan teks item ToDo
+            const tdTodo = document.createElement("td");
+            tdTodo.textContent = todo;
+            tr.appendChild(tdTodo);
+
+            // Menambahkan elemen <tr> ke dalam elemen tabel dengan id "todolistBody"
+            const todolistBody = document.getElementById("todolistBody");
+            todolistBody.appendChild(tr);
+         }
+
+         // Fungsi untuk menampilkan daftar ToDo ke dalam tabel HTML
+         function displayTodolist(){
+            // Menghapus semua item yang ada di tampilan sebelum memperbarui
+            clearTodolist();
+
+            // Melakukan iterasi pada setiap item dalam array todolist
+            for (let i = 0; i < todolist.length; i++) {
+               const todo = todolist[i];
+
+               // Mengambil teks dari input pencarian dan mengubahnya menjadi lowercase untuk pencarian case-insensitive
+               const searchText = document.getElementById("search").value.toLowerCase();
+
+               // Jika item ToDo mengandung teks pencarian, maka item tersebut ditampilkan
+               if (todo.toLowerCase().includes(searchText)) {
+                  addTodoList(i, todo);
+               }
+            }
+         }
+
+         // Event handler untuk menangani submit form ToDo
+         document.forms['todoForm'].onsubmit = function (event) {
+            event.preventDefault(); // Mencegah reload halaman saat form disubmit
+
+            // Mengambil nilai input dari form
+            const todo = document.forms['todoForm']['todo'].value;
+
+            // Menambahkan item baru ke array todolist
+            todolist.push(todo);
+
+            // Mereset form input setelah item ditambahkan
+            document.forms['todoForm'].reset();
+
+            // Menampilkan item ToDo terbaru
+            console.log(todolist);
+            displayTodolist();
+         };
+
+         // Event handler untuk pencarian berdasarkan input teks
+         const searchInput = document.getElementById("search");
+
+         // Menampilkan daftar ToDo setiap kali user mengetik atau menghapus karakter pada input pencarian
+         searchInput.onkeyup = function(){
+            displayTodolist();
+         };
+
+         searchInput.onkeydown = function(){
+            displayTodolist();
+         };
+
+         // Menampilkan daftar ToDo pada saat halaman pertama kali dimuat
+         displayTodolist();
+      </script>
+   </body>
+</html>

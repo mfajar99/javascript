@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Promise</title>
+   </head>
+   <body>
+      <table>
+         <tbody>
+            <tr>
+               <td>Id :</td>
+               <td id="id"></td>
+            </tr>
+            <tr>
+               <td>Name :</td>
+               <td id="name"></td>
+            </tr>
+            <tr>
+               <td>Price :</td>
+               <td id="price"></td>
+            </tr>
+         </tbody>
+      </table>
+      <script>
+         // Fungsi untuk mengambil data produk berdasarkan nama produk
+         function getProduct(product) {
+            // Mengembalikan Promise yang akan menyelesaikan dengan data produk atau menolak dengan pesan kesalahan
+            return new Promise(function (resolve, reject) {
+               const ajax = new XMLHttpRequest();
+               ajax.open("GET", `api/${product}.json`); // Membuka permintaan GET ke URL produk
+               ajax.onload = function () {
+                  if (ajax.status === 200) {
+                        // Menyelesaikan Promise dengan respons teks jika status sukses
+                        resolve(ajax.responseText);
+                  } else {
+                        // Menolak Promise dengan pesan kesalahan jika status bukan 200
+                        reject(`Error Get Product with response: ${ajax.status}`);
+                  }
+               };
+               ajax.send(); // Mengirim permintaan
+            });
+         }
+
+         // Menggunakan Promise.all untuk menangani beberapa Promise secara bersamaan
+         const promise = Promise.all([
+            getProduct("product1t"),
+            getProduct("product2"),
+            getProduct("product3")
+         ]);
+
+         // Menangani hasil dari semua Promise yang diselesaikan dengan Promise.all
+         promise.then(function (products) {
+            // Menampilkan hasil produk dalam konsol
+            console.info(products);
+         });
+      </script>
+   </body>
+</html>

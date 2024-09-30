@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Dynamic Module</title>
+   </head>
+   <body>
+      <input type="text" id="name" placeholder="enter" />
+      <input type="button" value="Say" id="sayButton" />
+
+      <script type="module">
+         // Menetapkan fungsi yang dijalankan saat tombol dengan ID "sayButton" diklik
+         document.getElementById("sayButton").onclick = function () {
+            // Mengambil nilai dari elemen input dengan ID "name"
+            const name = document.getElementById("name").value;
+
+            // Dinamis mengimpor modul 'alert.js'
+            import("./scripts/alert.js").then(function (module) {
+               // Memanggil fungsi alertHello dari modul yang diimpor
+               module.alertHello(name);
+            });
+         }
+      </script>
+   </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Operator Logika</title>
+   </head>
+   <body>
+      <script>
+         // Mendefinisikan nilai ujian dan nilai absensi
+         const nilaiUjian = 70;
+         const nilaiAbsensi = 70;
+
+         // Mengecek apakah nilai ujian lebih dari 75 untuk menentukan kelulusan ujian
+         const lulusUjian = nilaiUjian > 75; // false, karena 70 tidak lebih dari 75
+
+         // Mengecek apakah nilai absensi lebih dari 75 untuk menentukan kelulusan absensi
+         const lulusAbsensi = nilaiAbsensi > 75; // false, karena 70 tidak lebih dari 75
+
+         // Menentukan kelulusan secara keseluruhan dengan operator AND (&&)
+         // Mengembalikan true hanya jika kedua lulusUjian dan lulusAbsensi adalah true
+         const lulus = lulusUjian && lulusAbsensi; // false, karena lulusUjian dan lulusAbsensi keduanya false
+
+         // Menampilkan hasil kelulusan di dokumen HTML
+         document.writeln("<p>" + lulus + "</p>");
+      </script>
+   </body>
+</html>

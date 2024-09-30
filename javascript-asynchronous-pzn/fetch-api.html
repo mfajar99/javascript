@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Fetch API</title>
+   </head>
+   <body>
+      <form>
+         <label for="username">
+            Username :
+            <input type="text" id="username" name="username" />
+         </label>
+         <br />
+         <label for="password">
+            Password :
+            <input type="password" id="password" name="password" />
+         </label>
+         <br />
+         <input type="button" id="login" value="Login" />
+      </form>
+      <h1 id="response"></h1>
+      <script>
+         // Fungsi untuk menangani login dengan mengirimkan data ke server
+         function doLogin() {
+            // Membuat objek Request untuk permintaan POST ke URL
+            const request = new Request("https://fajar.free.beeceptor.com/", {
+               method: "POST",
+               headers: {
+                  "Content-Type": "application/json", // Mengatur header Content-Type untuk JSON
+                  "Accept": "application/json"        // Mengatur header Accept untuk menerima JSON
+               },
+               body: JSON.stringify({
+                  // Mengirimkan data username dan password dalam format JSON
+                  username: document.getElementById("username").value,
+                  password: document.getElementById("password").value
+               })
+            });
+
+            // Mengirim permintaan menggunakan fetch
+            // fetch mengembalikan Promise<Response>
+            const response = fetch(request);
+
+            // Menangani hasil dari fetch
+            response
+               .then((response) => response.json()) // Mengurai respons sebagai JSON
+               .then(function (json) {
+                  // Menampilkan hasil respons di elemen HTML dengan id "response"
+                  document.getElementById("response").textContent = json.success;
+               })
+               .catch(function (error) {
+                  // Menangani kesalahan dan menampilkan pesan kesalahan
+                  document.getElementById("response").textContent = error;
+               });
+            }
+
+         // Mengatur fungsi doLogin untuk dipanggil saat tombol dengan id "login" diklik
+         document.getElementById("login").onclick = doLogin;
+      </script>
+   </body>
+</html>

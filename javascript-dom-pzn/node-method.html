@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Node Property</title>
+   </head>
+   <body>
+      <ul id="menu">
+         <li id="first">First</li>
+         <li id="second">Second</li>
+         <li id="third">Third</li>
+      </ul>
+
+      <script>
+         // Mengambil elemen dengan ID "menu" dari dokumen HTML
+         const menu = document.getElementById("menu");
+
+         // Menghapus elemen dengan ID "first" dari elemen "menu"
+         menu.removeChild(document.getElementById("first"));
+
+         // Menghapus elemen dengan ID "second" dari elemen "menu"
+         menu.removeChild(document.getElementById("second"));
+
+         // Menghapus elemen dengan ID "third" dari elemen "menu"
+         menu.removeChild(document.getElementById("third"));
+      </script>
+   </body>
+</html>

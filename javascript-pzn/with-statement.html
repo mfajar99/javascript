@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>With Statement</title>
+   </head>
+   <body>
+      <script>
+            const person = {
+            firstName: "Muhammad",
+            middleName: "Fajar",
+            lastName: "Amir"
+         };
+
+         // Mengakses properti objek secara langsung tanpa menggunakan with statement
+         console.info(person.firstName); // Output: Muhammad
+         console.info(person.middleName); // Output: Fajar
+         console.info(person.lastName); // Output: Amir
+
+         const firstName = "Salam";
+         const lastName = "Anggara";
+
+         // Menggunakan with statement (Tidak disarankan)
+         // with statement dapat menyebabkan ambiguitas dan sulit untuk dibaca serta dipelihara
+         with (person) {
+             console.info(firstName); // Output: Salam (variabel lokal 'firstName' yang ada di luar with statement)
+             console.info(middleName); // Output: Fajar (ditemukan di dalam objek person)
+             console.info(lastName); // Output: Amir (ditemukan di dalam objek person)
+         }
+      </script>
+   </body>
+</html>

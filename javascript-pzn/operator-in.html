@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Operator In</title>
+   </head>
+   <body>
+      <script>
+         // Mendefinisikan objek person dengan properti firstName dan lastName
+         const person = {
+            firstName: "Fajar",
+            lastName: "Muhammad"
+         };
+
+         // Mengecek apakah properti 'firstName' ada dalam objek person
+         if ("firstName" in person) {
+            // Jika properti 'firstName' ada, tampilkan alert dengan nilai properti firstName
+            alert(`Hello ${person.firstName}`);
+         } else {
+            // Jika tidak ada, tampilkan alert "Hello"
+            alert("Hello");
+         }
+
+         // Mendefinisikan objek student dengan properti firstName, middleName, dan lastName
+         const student = {
+            firstName: "Fajar",
+            middleName: undefined, // Properti middleName ada tetapi nilainya undefined
+            lastName: "Muhammad"
+         };
+
+         // Mengecek apakah properti 'middleName' ada dalam objek student
+         if ("middleName" in student) {
+            // Jika properti 'middleName' ada, tampilkan alert dengan nilai properti middleName
+            alert(`Hello ${student.middleName}`);
+         } else {
+            // Jika tidak ada, tampilkan alert "Hello Student"
+            alert(`Hello Student`);
+         }
+
+         // Mendefinisikan array names dengan beberapa nilai, termasuk null
+         const names = [null, "Amir", null];
+
+         // Mengecek apakah indeks 0 ada dalam array names
+         const result = 0 in names; // Memeriksa apakah indeks 0 ada di array (selalu true karena array memiliki indeks 0)
+
+         // Menampilkan hasil pemeriksaan indeks 0 di dokumen HTML
+         document.writeln(`<p>${result}</p>`);
+      </script>
+   </body>
+</html>

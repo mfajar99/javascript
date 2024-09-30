@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Operator Logika di Non Bolean</title>
+   </head>
+   <body>
+      <script>
+         // Operator OR (||)
+         // Operator OR mengembalikan nilai dari operand pertama jika operand pertama adalah truthy; jika tidak, mengembalikan nilai dari operand kedua
+
+         console.info("Hello" || ''); // "Hello"
+         // Karena "Hello" adalah truthy, maka "Hello" akan ditampilkan
+
+         console.info("" || []); // []
+         // Karena string kosong "" adalah falsy, maka array kosong [] yang truthy akan ditampilkan
+
+         console.info("0" || "NOL"); // "0"
+         // Karena "0" adalah truthy, maka "0" akan ditampilkan
+
+         console.info(0 || "NOL"); // "NOL"
+         // Karena 0 adalah falsy, maka "NOL" akan ditampilkan
+
+         console.info(null || "NUL"); // "NUL"
+         // Karena null adalah falsy, maka "NUL" akan ditampilkan
+
+         console.info(undefined || "UNDEFINED"); // "UNDEFINED"
+         // Karena undefined adalah falsy, maka "UNDEFINED" akan ditampilkan
+
+         console.info(0 || false); // false
+         // Karena 0 adalah falsy, maka false yang juga falsy akan ditampilkan
+
+         // Contoh penggunaan operator OR dengan objek
+         const person = {
+            firstName: "fajar",
+            lastName: "Muhammad"
+         };
+
+         // Operator OR pada properti objek
+         const name = person.firstName || person.lastName;
+         // Karena person.firstName adalah "fajar" yang truthy, maka nilai "fajar" akan disimpan dalam variabel name
+         console.info(name); // "fajar"
+
+         // Operator AND (&&)
+         // Operator AND mengembalikan nilai dari operand kedua jika operand pertama adalah truthy; jika operand pertama adalah falsy, mengembalikan nilai dari operand pertama
+
+         console.info("hello" && ''); // ''
+         // Karena "hello" adalah truthy, maka nilai dari operand kedua yaitu string kosong '' akan ditampilkan
+
+         console.info("" && []); // ""
+         // Karena string kosong "" adalah falsy, maka operand pertama yaitu string kosong "" akan ditampilkan
+
+         console.info("0" && "NOL"); // "NOL"
+         // Karena "0" adalah truthy, maka nilai dari operand kedua yaitu "NOL" akan ditampilkan
+
+         console.info(0 && "NOL"); // 0
+         // Karena 0 adalah falsy, maka operand pertama yaitu 0 akan ditampilkan
+
+         console.info(null && "NULL"); // null
+         // Karena null adalah falsy, maka operand pertama yaitu null akan ditampilkan
+
+         console.info(undefined && "UNDEFINED"); // undefined
+         // Karena undefined adalah falsy, maka operand pertama yaitu undefined akan ditampilkan
+
+         console.info("undefined" && "null"); // "null"
+         // Karena "undefined" adalah truthy, maka nilai dari operand kedua yaitu "null" akan ditampilkan
+      </script>
+   </body>
+</html>

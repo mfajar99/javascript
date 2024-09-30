@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Default Class</title>
+   </head>
+   <body>
+      <script type="module">
+         // Mengimpor kelas default dari file default-class.js
+         import {default as Person} from "./scripts/default-class.js";
+
+         // Membuat objek dari kelas Person
+         const person = new Person("Fajar"); // Membuat instance baru dari kelas Person dengan nama "Fajar"
+
+         // Menggunakan metode sayHi dari objek person
+         person.sayHi(); // Memanggil metode sayHi dari objek person untuk menyapa "Fajar"
+      </script>
+   </body>
+</html>

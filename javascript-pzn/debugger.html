@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Debugger</title>
+   </head>
+   <body>
+      <script>
+         function createFullName(firstName, middleName, lastName) {
+         // Mengaktifkan debugger untuk memeriksa kode jika terjadi kesalahan
+         debugger;
+
+         // Membuat nama lengkap dengan format: "firstName lastName lastName"
+         // Seharusnya formatnya adalah "firstName middleName lastName"
+         const fullName = `${firstName} ${middleName} ${lastName}`;
+
+         // Mengembalikan nama lengkap yang sudah dibuat
+         return fullName;
+         }
+
+         // Memanggil fungsi createFullName dengan parameter 'Fajar', 'Muhammad', 'Amir'
+         // dan menyimpan hasilnya dalam variabel name
+         const name = createFullName('Fajar', 'Muhammad', 'Amir');
+
+         // Mencetak nama lengkap yang dihasilkan ke konsol
+         console.info(name);
+      </script>
+   </body>
+</html>

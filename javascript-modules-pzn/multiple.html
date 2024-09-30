@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Multiple</title>
+   </head>
+   <body>
+      <script type="module">
+         // Mengimpor ekspor dari file multiple.js
+         import {company, sum, Company} from "./scripts/multiple.js";
+
+         // Mengimpor ekspor dari file multiple2.js dengan alias
+         import {company as perusahaan, sum as jumlah, Company as Perusahaan} from "./scripts/multiple2.js";
+
+         // Menampilkan nilai dari ekspor 'company' dari file multiple.js
+         console.log(company); // Menampilkan nilai dari ekspor bernama 'company'
+
+         // Menampilkan nilai dari ekspor 'perusahaan' dari file multiple2.js
+         console.log(perusahaan); // Menampilkan nilai dari ekspor bernama 'company' yang telah diberi alias 'perusahaan'
+
+         // Menampilkan hasil fungsi 'sum' dari file multiple.js
+         console.log(sum(10, 10)); // Memanggil fungsi 'sum' dengan argumen 10 dan 10, dan menampilkan hasilnya
+
+         // Menampilkan hasil fungsi 'jumlah' dari file multiple2.js
+         console.log(jumlah(10, 10)); // Memanggil fungsi 'jumlah' (alias dari 'sum') dengan argumen 10 dan 10, dan menampilkan hasilnya
+
+         // Membuat instance baru dari kelas 'Company' dari file multiple.js
+         const a = new Company(); // Membuat objek baru dari kelas 'Company'
+
+         // Membuat instance baru dari kelas 'Perusahaan' dari file multiple2.js
+         const b = new Perusahaan(); // Membuat objek baru dari kelas 'Company' yang di-alias-kan sebagai 'Perusahaan'
+      </script>
+   </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>HTML Table Element</title>
+   </head>
+   <body>
+      <table id="orderRevenue" border="1">
+         <caption>
+            Order Revenue
+         </caption>
+         <thead>
+            <tr>
+               <th>Month</th>
+               <th>Income</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>January</td>
+               <td>100000000</td>
+            </tr>
+            <tr>
+               <td>February</td>
+               <td>200000000</td>
+            </tr>
+         </tbody>
+         <tfoot>
+            <tr>
+               <td>Total</td>
+               <td>300000000</td>
+            </tr>
+         </tfoot>
+      </table>
+
+      <script>
+         // Mengambil elemen dengan ID "orderRevenue" dari dokumen HTML
+         const table = document.getElementById("orderRevenue");
+
+         // Menampilkan caption tabel ke konsol
+         console.log(table.caption);
+
+         // Menampilkan elemen <thead> (bagian kepala tabel) ke konsol
+         console.log(table.tHead);
+
+         // Menampilkan koleksi elemen <tbody> (badan tabel) ke konsol
+         console.log(table.tBodies);
+
+         // Menampilkan elemen <tfoot> (bagian kaki tabel) ke konsol
+         console.log(table.tFoot);
+
+         // Menampilkan koleksi semua baris tabel (<tr>) ke konsol
+         console.log(table.rows);
+      </script>
+   </body>
+</html>

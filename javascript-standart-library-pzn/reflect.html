@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Reflect</title>
+   </head>
+   <body>
+      <script>
+         const person = {};
+
+         // Menggunakan Reflect.set untuk menambah atau mengubah properti di object "person"
+         // Reflect.set(object, propertyName, value) akan mengubah nilai dari propertyName pada object
+         Reflect.set(person, "firstName", "Fajar");
+         Reflect.set(person, "lastName", "Muhammad");
+
+         // Output: { firstName: 'Fajar', lastName: 'Muhammad' }
+         // Menampilkan object "person" setelah perubahan
+         console.log(person);
+
+         // Menggunakan Reflect.get untuk mengambil nilai properti dari object "person"
+         // Reflect.get(object, propertyName) akan mengembalikan nilai dari propertyName pada object
+         console.log(Reflect.get(person, "firstName")); // Output: Fajar
+         console.log(Reflect.get(person, "lastName"));  // Output: Muhammad
+         console.log(Reflect.get(person, "lastName"));  // Output: Muhammad
+
+         // Menggunakan Reflect.has untuk memeriksa apakah sebuah properti ada di object "person"
+         // Reflect.has(object, propertyName) mengembalikan true jika properti ada, dan false jika tidak
+         console.log(Reflect.has(person, "firstName"));  // Output: true (karena "firstName" ada di object)
+         console.log(Reflect.has(person, "middleName")); // Output: false (karena "middleName" tidak ada di object)
+         console.log(Reflect.has(person, "lastName"));   // Output: true (karena "lastName" ada di object)
+      </script>
+   </body>
+</html>

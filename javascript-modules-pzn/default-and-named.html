@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Defautl and Named</title>
+   </head>
+   <body>
+      <script type="module">
+         // Mengimpor modul dari file default-and-named.js
+         import {default as authorName, content, title} from "./scripts/default-and-named.js";
+
+         // Menampilkan nilai yang diimpor ke konsol
+         console.log(content);    // Menampilkan nilai dari konstanta 'content' yang diimpor dari modul
+         console.log(title);      // Menampilkan nilai dari konstanta 'title' yang diimpor dari modul
+         console.log(authorName); // Menampilkan nilai dari ekspor default, yang diimpor sebagai 'authorName'
+      </script>
+   </body>
+</html>

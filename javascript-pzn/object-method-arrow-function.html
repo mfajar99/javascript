@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Object Method Arrow Function</title>
+   </head>
+   <body>
+      <script>
+         // Mendefinisikan objek person dengan metode sayHello
+         const person = {
+            name: "Fajar", // Properti name pada objek person
+            sayHello: (name) => {
+               // Menampilkan nilai 'this' di dalam metode sayHello
+               console.info(this);
+               // Menampilkan pesan dengan nama yang diberikan dan nama dari 'this.name'
+               // Namun, 'this' dalam arrow function tidak merujuk pada objek person
+               console.info(`Hello ${name} My Name is ${this.name}`);
+            }
+         };
+
+         // Memanggil metode sayHello pada objek person dengan argumen "Budi"
+         person.sayHello("Budi");
+      </script>
+   </body>
+</html>

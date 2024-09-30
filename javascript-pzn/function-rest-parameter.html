@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Rest Parameter</title>
+   </head>
+   <body>
+      <script>
+                 // Fungsi 'sum' menggunakan parameter 'rest' untuk menerima banyak nilai sebagai array
+         // 'name' adalah parameter pertama, dan '...data' adalah parameter rest yang menangkap sisa argumen
+         function sum(name, ...data) {
+             let total = 0; // Inisialisasi variabel 'total' dengan nilai 0
+             // Loop melalui setiap item dalam 'data' (yang merupakan array)
+            for (const item of data) {
+               total += item; // Menambahkan nilai 'item' ke 'total'
+            }
+            // Menampilkan hasil total dengan menggunakan 'name' sebagai label
+            document.writeln(`<p>Total ${name} is ${total}</p>`);
+         }
+
+         // Memanggil fungsi 'sum' dengan beberapa argumen
+         sum('Orange', 2, 3, 4, 6, 7, 8); // Output: Total Orange is 30
+         sum('Apple', 5, 5, 6, 7, 5, 6);  // Output: Total Apple is 34
+         sum('Banana', 9, 5, 2, 3, 4);    // Output: Total Banana is 23
+
+         // Membuat array 'values'
+         const values = [10, 10, 10, 10];
+         // Menggunakan spread syntax untuk mengubah array menjadi argumen individual
+         // Ini membuat panggilan sama seperti 'sum("Test", 10, 10, 10, 10)'
+         sum("Test", ...values); // Output: Total Test is 40
+
+         // Contoh penggunaan 'arguments' object (tidak disarankan)
+         // Fungsi 'oldSum' menggunakan 'arguments' object untuk menangkap semua argumen yang dikirimkan
+         function oldSum() {
+             let total = 0; // Inisialisasi variabel 'total' dengan nilai 0
+             // Loop melalui setiap item dalam 'arguments' (bukan array, tetapi array-like object)
+            for (const item of arguments) {
+               total += item; // Menambahkan nilai 'item' ke 'total'
+            }
+            // Menampilkan hasil total
+            document.writeln(`<p>Total is ${total}</p>`);
+         }
+
+         // Memanggil fungsi 'oldSum' dengan beberapa argumen
+         oldSum(1, 2, 3, 4, 5); // Output: Total is 15
+      </script>
+   </body>
+</html>

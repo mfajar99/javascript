@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Scope</title>
+   </head>
+   <body>
+      <script>
+         // Deklarasi variabel di global scope
+         let counter = 0;
+
+         // Fungsi di global scope
+         function hitMe() {
+             // Local scope dalam fungsi hitMe
+             counter++; // Mengakses dan memodifikasi variabel global counter
+         }
+
+         // Fungsi di global scope
+         function other() {
+             // Local scope dalam fungsi other
+         }
+
+         // Memanggil fungsi hitMe dua kali
+         hitMe();
+         hitMe();
+
+         // Menampilkan nilai counter di konsol
+         console.info(counter); // Output: 2, karena counter incremented dua kali oleh hitMe()
+
+         // Fungsi di global scope
+         function first() {
+            // Local scope dalam fungsi first
+            let firstVariable = "First"; // Variabel yang hanya bisa diakses dalam fungsi first
+
+            // Fungsi di dalam fungsi first (nested function)
+            function firstNested() {
+               console.info(firstVariable); // Output: "First", firstVariable diakses dalam nested function
+               const firstNestedVariable = "First Nested"; // Variabel lokal untuk firstNested
+            }
+
+            firstNested(); // Memanggil fungsi nested
+
+            // console.info(firstNestedVariable); // ERROR, firstNestedVariable tidak bisa diakses di luar firstNested
+         }
+
+         // Fungsi di global scope
+         function second() {
+             // Local scope dalam fungsi second
+             let secondVariable = "Second"; // Variabel yang hanya bisa diakses dalam fungsi second
+
+             // console.info(firstVariable); // ERROR, firstVariable tidak bisa diakses dari fungsi second
+         }
+
+         // Memanggil fungsi first dan second
+         first();
+         second();
+
+         // Variabel global tidak ada
+         // console.writeln(firstVariable); // ERROR, firstVariable hanya dapat diakses di dalam fungsi first
+         // console.writeln(secondVariable); // ERROR, secondVariable hanya dapat diakses di dalam fungsi second
+      </script>
+   </body>
+</html>

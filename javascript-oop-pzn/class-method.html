@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Class Contsructor</title>
+   </head>
+   <body>
+      <script>
+         // Mendefinisikan kelas 'Person'
+         class Person {
+            // Konstruktor untuk menginisialisasi nama
+            constructor(name) {
+               this.name = name; // Menyimpan nama yang diberikan ke dalam properti 'name'
+            }
+
+            // Metode untuk menyapa seseorang
+            sayHello(name) {
+               // Menampilkan pesan sapaan yang menyertakan nama yang diberikan dan nama objek 'Person'
+               console.info(`Hello ${name}, my name is ${this.name}`);
+            }
+         }
+
+         // Membuat instance baru dari kelas 'Person' dengan nama "Fajar"
+         const fajar = new Person("Fajar");
+
+         // Menampilkan objek 'fajar' di konsol
+         console.info(fajar);
+
+         // Menggunakan metode 'sayHello' untuk menyapa "Joko"
+         fajar.sayHello("Joko");
+
+         // Membuat instance baru dari kelas 'Person' dengan nama "Andi"
+         const andi = new Person("Andi");
+
+         // Menampilkan objek 'andi' di konsol
+         console.info(andi);
+
+         // Menggunakan metode 'sayHello' untuk menyapa "Joko"
+         andi.sayHello("Joko");
+      </script>
+   </body>
+</html>

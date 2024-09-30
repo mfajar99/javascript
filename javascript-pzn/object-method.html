@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Obeject Method</title>
+   </head>
+   <body>
+      <script>
+         // Cara pertama:
+         // Mendefinisikan objek person dengan metode sayHello langsung di saat deklarasi objek
+         // const person = {
+         //     name: "Fajar",
+         //     sayHello: function (name) {
+         //         alert(`Hello ${name}`);
+         //     }
+         // }
+
+         // Cara kedua:
+         // Mendefinisikan objek person dengan properti name
+         const person = {
+            name: "Fajar"
+         };
+
+         // Menambahkan metode sayHello ke objek person setelah objek didefinisikan
+         person.sayHello = function(name) {
+            alert(`Hello ${name}`);
+         }
+
+         // Memanggil metode sayHello pada objek person dengan argumen "Budi"
+         person.sayHello("Budi");
+      </script>
+   </body>
+</html>

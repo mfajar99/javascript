@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Prototype Inheritance</title>
+   </head>
+   <body>
+      <script>
+         // Constructor function Employee
+         function Employee(name) {
+            this.name = name;
+         }
+
+         // Constructor function Manager
+         function Manager(name) {
+            this.name = name;
+         }
+
+         // Mengatur prototype Manager agar mewarisi dari prototype Employee
+         Manager.prototype = Object.create(Employee.prototype); // Benar, Manager akan mewarisi dari Employee
+
+         // Menambahkan method sayHello ke prototype Manager
+         Manager.prototype.sayHello = function (name) {
+            console.info(`Hello ${name}, My Name is Manager ${this.name}`);
+         }
+
+         // Menambahkan method sayHello ke prototype Employee
+         Employee.prototype.sayHello = function (name) {
+            console.info(`Hello ${name}, My Name is Employee ${this.name}`);
+         }
+
+         // Membuat instance baru dari Employee
+         const employee = new Employee("Budi");
+         // Memanggil method sayHello dari Employee
+         employee.sayHello("Joko");
+
+         // Membuat instance baru dari Manager
+         const manager = new Manager("Fajar");
+         // Memanggil method sayHello dari Manager
+         manager.sayHello("Joko");
+
+         // Menampilkan objek employee dan manager
+         console.info(employee);
+         console.info(manager);
+      </script>
+   </body>
+</html>

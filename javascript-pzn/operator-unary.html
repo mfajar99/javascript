@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Operator Unary</title>
+   </head>
+   <body>
+      <script>
+         // Menggunakan operator unary + untuk mengkonversi nilai ke tipe number
+         let result = +1; // Konversi nilai 1 menjadi tipe number, hasilnya tetap 1
+         document.writeln("<p>" + result + "</p>"); // Menampilkan <p>1</p>
+
+         // Menggunakan operator decrement -- untuk mengurangi nilai result sebanyak 1
+         result--; // result = result - 1; result -= 1; // Mengurangi nilai result dari 1 menjadi 0
+         document.writeln("<p>" + result + "</p>"); // Menampilkan <p>0</p>
+
+         // Menggunakan operator increment ++ untuk menambah nilai result sebanyak 1
+         result++; // result = result + 1; result += 1; // Menambah nilai result dari 0 menjadi 1
+         document.writeln("<p>" + result + "</p>"); // Menampilkan <p>1</p>
+
+         // Menggunakan operator unary - untuk mengubah tanda nilai result
+         result = -result; // Mengubah tanda result dari 1 menjadi -1
+         document.writeln("<p>" + result + "</p>"); // Menampilkan <p>-1</p>
+      </script>
+   </body>
+</html>

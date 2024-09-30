@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Map</title>
+   </head>
+   <body>
+      <script>
+                  // Buat instance baru dari Map, struktur data yang menyimpan pasangan kunci-nilai
+         const map = new Map();
+
+         // Tambahkan beberapa pasangan kunci-nilai ke dalam map
+         map.set("Name", "Fajar Muhammad");
+         map.set("Address", "Banyuates");
+
+         // Tampilkan seluruh map ke konsol
+         console.log(map);
+
+         // Ambil dan tampilkan nilai berdasarkan kunci "Name"
+         console.log(map.get("Name")); // Output: Fajar Muhammad
+
+         // Ambil dan tampilkan nilai berdasarkan kunci "Address"
+         console.log(map.get("Address")); // Output: Banyuates
+
+         // Coba ambil dan tampilkan nilai berdasarkan kunci "Hobby" (tidak ada dalam map, jadi hasilnya undefined)
+         console.log(map.get("Hobby")); // Output: undefined
+
+         // Iterasi melalui map dan tampilkan setiap pasangan kunci-nilai
+         for (const element of map) {
+            console.log(`${element[0]} : ${element[1]}`);
+         }
+
+         // Iterasi melalui map menggunakan forEach dan tampilkan setiap pasangan kunci-nilai
+         map.forEach((value, key) => console.log(`${key} : ${value}`));
+      </script>
+   </body>
+</html>

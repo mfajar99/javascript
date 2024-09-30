@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Ajax Send Query Param</title>
+   </head>
+   <body>
+      <h1>Register</h1>
+      <form>
+         <label for="username">
+            Username :
+            <input type="text" id="username" name="username" />
+         </label>
+         <br />
+         <label for="name">
+            Name :
+            <input type="text" id="name" name="name" />
+         </label>
+         <br />
+         <label for="profile">
+            Profile :
+            <input type="file" id="profile" name="profile" />
+         </label>
+         <br />
+         <input type="button" id="register" value="Register" />
+      </form>
+      <h1 id="response"></h1>
+      <script>
+            function doLogin(){
+            // Membuat instance baru dari XMLHttpRequest untuk membuat permintaan AJAX
+            const ajax = new XMLHttpRequest();
+
+            // Membuka koneksi AJAX dengan metode POST ke URL tertentu
+            ajax.open("POST", `https://fajar.free.beeceptor.com`);
+
+            // Event handler yang dipanggil saat permintaan AJAX berhasil di-load
+            ajax.onload = function(){
+               // Mendapatkan elemen HTML dengan id "response" untuk menampilkan respons dari server
+               const response = document.getElementById("response");
+
+               // Menampilkan teks respons dari server di dalam elemen "response"
+               response.innerText = ajax.responseText;
+            };
+
+            // Membuat objek FormData untuk mengumpulkan data dari form
+            const form = new FormData();
+
+            // Menambahkan data dari input form ke dalam objek FormData
+            form.append("username", document.getElementById("username").value); // Mengambil nilai username dari input
+            form.append("name", document.getElementById("name").value); // Mengambil nilai name dari input
+
+            // Mengambil file yang diunggah dari input file dengan id "profile"
+            const files = document.getElementById("profile").files;
+
+            // Memastikan file pertama yang dipilih (jika ada) dimasukkan ke FormData
+            const firstFile = files.item(0);
+            form.append("profile", firstFile); // Menambahkan file profile ke dalam FormData
+
+            // Mengirim permintaan AJAX dengan data yang sudah ditambahkan ke FormData
+            ajax.send(form);
+         }
+
+         // Menambahkan event handler ke tombol dengan id "register"
+         // Saat tombol diklik, fungsi doLogin akan dipanggil
+         document.getElementById("register").onclick = doLogin;
+      </script>
+   </body>
+</html>

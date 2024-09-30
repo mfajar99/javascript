@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Eval</title>
+   </head>
+   <body>
+      <script>
+         const script = alert('Anda di hack'); // Menampilkan pesan dengan alert. 'script' berisi undefined.
+         eval(script); // Mencoba mengeksekusi undefined dengan eval, yang akan menyebabkan kesalahan.
+
+         // Catatan:
+         // - `alert` hanya menampilkan pesan, tidak mengembalikan kode yang bisa dieksekusi.
+         // - `eval` berisiko dan tidak aman; hindari penggunaannya jika tidak perlu.
+      </script>
+   </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>If Statement</title>
+   </head>
+   <body>
+      <script>
+         const examValue = 60; // Deklarasi variabel examValue dengan nilai 60
+
+         // (if block) kode di dalam blok ini akan dieksekusi jika kondisi yang diberikan adalah true
+         if (examValue > 80) {
+            // Jika examValue lebih besar dari 80, maka kode ini akan dieksekusi
+            document.writeln("<p>Good Job : A</p>");
+
+         // (else if block) kode di dalam blok ini akan dieksekusi jika kondisi if sebelumnya tidak terpenuhi,
+         // tetapi kondisi else if ini adalah true
+         } else if (examValue > 70) {
+            // Jika examValue lebih besar dari 70, tetapi tidak lebih besar dari 80, maka kode ini akan dieksekusi
+            ent.writeln("<p>Good Job : B</p>");
+
+         // (else if block) lain yang akan dicek jika kondisi if dan else if sebelumnya tidak terpenuhi
+         } else if (examValue > 60) {
+            // Jika examValue lebih besar dari 60, tetapi tidak lebih besar dari 70, maka kode ini akan dieksekusi
+            writeln("<p>Good Job : C</p>");
+
+         // (else block) kode di dalam blok else akan dieksekusi jika semua kondisi if dan else if sebelumnya adalah false
+         } else {
+            // Jika examValue tidak lebih besar dari 60, maka kode ini akan dieksekusi
+            document.writeln("<p>Try Again Next Year</p>");
+         }
+      </script>
+   </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Class Contsructor</title>
+   </head>
+   <body>
+      <script>
+         // Mendefinisikan kelas 'Employee'
+         class Employee {
+            sayHello(name) {
+               // Menampilkan pesan sapaan dari kelas 'Employee'
+               console.info(`Hello ${name}, my name is employee ${this.name}`);
+            }
+         }
+
+         // Mendefinisikan kelas 'Manager' yang mewarisi dari 'Employee'
+         class Manager extends Employee {
+            sayHello(name) {
+               // Menampilkan pesan sapaan dari kelas 'Manager', menimpa metode 'sayHello' dari 'Employee'
+               console.info(`Hello ${name}, my name is manager ${this.name}`);
+            }
+         }
+
+         // Membuat instance baru dari kelas 'Manager'
+         const fajar = new Manager();
+         fajar.name = "fajar"; // Menetapkan nama untuk objek 'fajar'
+         fajar.sayHello("Joko"); // Menggunakan metode 'sayHello' dari kelas 'Manager'
+
+         // Membuat instance baru dari kelas 'Employee'
+         const budi = new Employee();
+         budi.name = "budi"; // Menetapkan nama untuk objek 'budi'
+         budi.sayHello("Joko"); // Menggunakan metode 'sayHello' dari kelas 'Employee'
+
+         // Menampilkan objek 'fajar' di konsol
+         console.info(fajar);
+         // Menampilkan objek 'budi' di konsol
+         console.info(budi);
+      </script>
+   </body>
+</html>

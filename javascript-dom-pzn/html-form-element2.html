@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>HTML Form Element</title>
+   </head>
+   <body>
+      <form name="commentForm">
+         <label for="comment"> Comment : <input type="text" name="comment" id="comment" /> </label>
+         <br />
+         <label for="from"> From : <input type="text" name="from" id="from" /> </label>
+         <br />
+         <input type="submit" value="Submit" />
+      </form>
+
+      <div id="commentList"></div>
+
+      <script>
+         // Menetapkan fungsi untuk dijalankan saat formulir dengan nama "commentForm" disubmit
+         document.forms['commentForm'].onsubmit = function (event) {
+            // Mencegah perilaku default dari form yang mengirimkan data
+            event.preventDefault();
+
+            // Mengambil elemen dengan ID "commentList" yang akan menampung daftar komentar
+            const commentList = document.getElementById("commentList");
+
+            // Mengambil nilai dari elemen input dengan nama "comment" dalam formulir "commentForm"
+            const comment = document.forms['commentForm']['comment'].value;
+
+            // Mengambil nilai dari elemen input dengan nama "from" dalam formulir "commentForm"
+            const from = document.forms['commentForm']['from'].value;
+
+            // Membuat elemen <p> baru untuk menampilkan komentar
+            const commentItem = document.createElement("p");
+
+            // Mengatur teks konten dari elemen <p> dengan komentar dan nama pengirim
+            commentItem.textContent = `${comment} - ${from}`;
+
+            // Menambahkan elemen <p> yang baru dibuat ke dalam elemen commentList
+            commentList.appendChild(commentItem);
+
+            // Mereset formulir sehingga semua input kembali ke keadaan kosong
+            document.forms['commentForm'].reset();
+         }
+      </script>
+   </body>
+</html>

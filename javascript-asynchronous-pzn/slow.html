@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Slow</title>
+   </head>
+   <body>
+      <button id="buttonTask">Click Me</button>
+
+      <script>
+         // Fungsi untuk mencetak angka dari 0 hingga total-1 ke konsol
+         function slowLog(total) {
+            for (let i = 0; i < total; i++) {
+               console.info(i);
+            }
+         }
+
+         // Menetapkan fungsi untuk dijalankan saat tombol dengan ID "buttonTask" diklik
+         document.getElementById("buttonTask").onclick = function() {
+            console.info("Start");
+            slowLog(100000); // Mencetak angka dari 0 hingga 99999
+            console.info("End");
+         }
+      </script>
+   </body>
+</html>

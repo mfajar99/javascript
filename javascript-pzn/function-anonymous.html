@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Function Anonymous</title>
+   </head>
+   <body>
+      <script>
+         // Mendefinisikan fungsi anonim dan menyimpannya dalam variabel 'say'
+         // Fungsi ini menerima satu parameter 'name' dan menulis pesan selamat datang ke dokumen HTML
+         const say = function(name) {
+            document.writeln(`<p>Hello ${name}</p>`);
+         }
+
+         // Memanggil fungsi 'say' dengan argumen "Andi"
+         say("Andi");
+         // Memanggil fungsi 'say' dengan argumen "Budi"
+         say("Budi");
+
+         // Fungsi 'giveMeName' menerima sebuah fungsi (callback) sebagai parameter
+         // dan memanggil fungsi tersebut dengan argumen "Fajar"
+         function giveMeName(callback) {
+            callback("Fajar");
+         }
+
+         // Memanggil 'giveMeName' dengan 'say' sebagai callback, sehingga 'say' dipanggil dengan argumen "Fajar"
+         giveMeName(say);
+
+         // Memanggil 'giveMeName' dengan fungsi anonim sebagai callback, yang langsung mendefinisikan logika saat dipanggil
+         // Fungsi anonim ini menerima satu parameter 'name' dan menulis pesan salam singkat ke dokumen HTML
+         giveMeName(function (name) {
+            document.writeln(`Hi ${name}`);
+         });
+      </script>
+   </body>
+</html>

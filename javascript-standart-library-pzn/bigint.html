@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>BigInt</title>
+   </head>
+   <body>
+      <script>
+         const a = BigInt(Number.MAX_SAFE_INTEGER);
+         const b = BigInt(Number.MAX_SAFE_INTEGER);
+
+         const c = a + b;
+         console.log(c); // Output: 18014398509481984n (atau hasil dari penjumlahan a dan b)
+         console.log(typeof c); // Output: bigint
+      </script>
+   </body>
+</html>

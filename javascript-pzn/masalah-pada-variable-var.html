@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Masalah Pada Variable Var</title>
+   </head>
+   <body>
+      <script>
+         // Mendefinisikan variabel i di ruang lingkup global
+         var i = 20;
+
+         // Memulai loop dengan variabel i
+         for (var i = 0; i < 10; i++) {
+            // Variabel i yang digunakan dalam loop
+            console.info(`Local ${i}`); // Menampilkan nilai i pada setiap iterasi loop
+         }
+
+         // Menampilkan nilai variabel i setelah loop selesai
+         console.info(`Global ${i}`); // Menampilkan nilai akhir dari i di ruang lingkup global
+      </script>
+   </body>
+</html>

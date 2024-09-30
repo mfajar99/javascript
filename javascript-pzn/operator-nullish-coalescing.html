@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Operator Nullish Coalescing</title>
+   </head>
+   <body>
+      <script>
+         // Tanpa menggunakan operator nullish coalescing
+         let parameter = "Fajar"; // Mendefinisikan variabel parameter dengan nilai "Fajar"
+
+         // Menyalin nilai parameter ke variabel data
+         let data = parameter;
+
+         // Mengecek apakah data adalah undefined atau null
+         if (data === undefined || data === null) {
+             // Jika data adalah undefined atau null, atur data ke "Nilai Default"
+            data = "Nilai Default";
+         }
+
+         // Menampilkan nilai data di dokumen HTML
+         document.writeln(`<p>${data}</p>`); // Akan menampilkan <p>Fajar</p> karena parameter tidak null atau undefined
+
+         // Menggunakan operator nullish coalescing (??)
+         data = parameter ?? "Nilai Default";
+         // Operator nullish coalescing ?? mengembalikan operand kanan ("Nilai Default") hanya jika operand kiri (parameter) adalah null atau undefined
+         // Karena parameter adalah "Fajar" (bukan null atau undefined), maka data tetap "Fajar"
+
+         // Menampilkan nilai data di dokumen HTML
+         document.writeln(`<p>${data}</p>`); // Akan menampilkan <p>Fajar</p> karena parameter tidak null atau undefined
+      </script>
+   </body>
+</html>

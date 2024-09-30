@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Element Property</title>
+   </head>
+   <body>
+      <div id="content" class="content">
+         <h1 id="title" class="title">This is Title</h1>
+         <p id="description" class="description">This is Description</p>
+      </div>
+
+      <script>
+         // Mengambil elemen dengan ID "content" dari dokumen HTML
+         const content = document.getElementById("content");
+
+         // Menampilkan ID elemen "content" ke konsol
+         console.log(content.id);
+
+         // Menampilkan nama kelas (class) elemen "content" ke konsol
+         console.log(content.className);
+
+         // Menampilkan nama tag elemen "content" ke konsol
+         console.log(content.tagName);
+      </script>
+   </body>
+</html>

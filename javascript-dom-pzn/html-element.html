@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>HTML Element</title>
+   </head>
+   <body>
+      <a id="link"></a>
+
+      <script>
+         // Mengambil elemen dengan ID "link" dari dokumen HTML
+         const link = document.getElementById("link");
+
+         // Mengatur atribut href dari elemen link ke URL yang diinginkan
+         link.href = "https://www.programmerzamannow.com";
+
+         // Mengatur atribut target dari elemen link agar membuka tautan di tab baru
+         link.target = "_blank";
+
+         // Mengatur teks konten dari elemen link
+         link.textContent = "Website Programmer Zaman Now";
+      </script>
+   </body>
+</html>

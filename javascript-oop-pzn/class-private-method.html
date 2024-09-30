@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Class Private Method</title>
+   </head>
+   <body>
+      <script>
+         // Mendefinisikan kelas 'Person'
+         class Person {
+            // Metode 'say' yang memanggil metode privat berdasarkan apakah nama diberikan
+            say(name) {
+               if (name) {
+                  // Jika nama diberikan, panggil metode privat '#sayWithName'
+                  this.#sayWithName(name);
+               } else {
+                  // Jika nama tidak diberikan, panggil metode privat '#sayWithoutName'
+                  this.#sayWithoutName();
+               }
+            }
+
+            // Metode privat '#sayWithoutName' yang menampilkan sapaan tanpa nama
+            #sayWithoutName() {
+               console.info("Hello");
+            }
+
+            // Metode privat '#sayWithName' yang menampilkan sapaan dengan nama
+            #sayWithName(name) {
+               console.info(`Hello ${name}`);
+            }
+         }
+
+         // Membuat instance baru dari kelas 'Person'
+         const fajar = new Person();
+
+         // Memanggil metode 'say' pada instance 'fajar' dengan nama "Joko"
+         // Ini akan memanggil metode privat '#sayWithName'
+         fajar.say("Joko");
+
+         // Mencoba memanggil metode privat '#sayWithoutName' secara langsung
+         // Ini akan menghasilkan error karena '#sayWithoutName' adalah metode privat
+         // fajar.#sayWithoutName();
+      </script>
+   </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Window</title>
+   </head>
+   <body>
+      <p id="content"></p>
+      <p id="location"></p>
+      <script>
+         // Mengambil elemen dengan ID "content" dari dokumen HTML
+         const content = document.getElementById("content");
+
+         // Mengambil elemen dengan ID "location" dari dokumen HTML
+         const locationParagraph = document.getElementById("location");
+
+         // Mendapatkan tinggi layar dari jendela browser
+         const height = window.screen.height;
+
+         // Mendapatkan lebar layar dari jendela browser
+         const width = window.screen.width;
+
+         // Mendapatkan URL saat ini dari jendela browser
+         const url = window.location;
+
+         // Mengatur konten elemen dengan ID "content" untuk menampilkan lebar dan tinggi layar
+         content.textContent = `Window width : (${width}), Window height : (${height})`;
+
+         // Mengatur konten elemen dengan ID "location" untuk menampilkan URL saat ini
+         locationParagraph.textContent = url;
+      </script>
+   </body>
+</html>

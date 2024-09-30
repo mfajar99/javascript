@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Class Getter Setter</title>
+   </head>
+   <body>
+      <script>
+         // Mendefinisikan kelas 'Person'
+         class Person {
+            constructor(firstName, lastName) {
+               // Menyimpan nama depan dan nama belakang saat objek dibuat
+               this.firstName = firstName;
+               this.lastName = lastName;
+            }
+
+            // Mendefinisikan getter untuk 'fullName'
+            get fullName() {
+               // Menggabungkan nama depan dan nama belakang untuk mendapatkan nama lengkap
+               return `${this.firstName} ${this.lastName}`;
+            }
+
+            // Mendefinisikan setter untuk 'fullName'
+            set fullName(value) {
+               // Memisahkan nama lengkap menjadi nama depan dan nama belakang
+               const result = value.split(" ");
+               this.firstName = result[0];
+               this.lastName = result[1];
+            }
+         }
+
+         // Membuat instance baru dari kelas 'Person' dengan nama depan "Fajar" dan nama belakang "Muhammad"
+         const fajar = new Person("Fajar", "Muhammad");
+
+         // Menampilkan objek 'fajar' di konsol
+         console.info(fajar);
+
+         // Menampilkan nama lengkap 'fajar' menggunakan getter 'fullName'
+         console.info(fajar.fullName); // Output: "Fajar Muhammad"
+
+         // Mengubah nama lengkap 'fajar' menggunakan setter 'fullName'
+         fajar.fullName = "Andi Aja";
+
+         // Menampilkan objek 'fajar' setelah perubahan nama lengkap
+         console.info(fajar); // Nama depan akan menjadi "Andi" dan nama belakang akan menjadi "Aja"
+      </script>
+   </body>
+</html>

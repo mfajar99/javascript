@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Class Public Field</title>
+   </head>
+   <body>
+      <script>
+         // Mendefinisikan kelas 'Customer'
+         class Customer {
+            // Mendeklarasikan properti kelas 'firstName' dan 'lastName' tanpa nilai awal
+            firstName;
+            lastName;
+
+            // Mendeklarasikan properti 'balance' dengan nilai awal 0
+            balance = 0;
+
+            // Konstruktor kelas yang menerima parameter 'firstName' dan 'lastName'
+            constructor(firstName, lastName) {
+               this.firstName = firstName;
+               this.lastName = lastName;
+            }
+
+            // Metode kosong 'sayHello' yang tidak melakukan apa-apa
+            sayHello() {
+               // Metode ini bisa diisi dengan logika untuk menyapa pelanggan
+            }
+         }
+
+         // Membuat instance baru dari kelas 'Customer' dengan nama depan "Fajar" dan nama belakang "Muhammad"
+         const fajar = new Customer("Fajar", "Muhammad");
+
+         // Menampilkan objek 'fajar' di konsol
+         console.info(fajar);
+      </script>
+   </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Base64</title>
+   </head>
+   <body>
+      <script>
+         const original = "Fajar&Muhammad=Amir";
+         console.log(original); // Output: Fajar&Muhammad=Amir
+
+         // Encoding: Mengubah string menjadi Base64
+         const encoded = btoa(original);
+         console.log(encoded); // Output: RmFqYXImTW9oYW1tYWRtPQ== (atau hasil Base64 encoding dari string original)
+
+         // Decoding: Mengubah Base64 kembali menjadi string
+         const decoded = atob(encoded);
+         console.log(decoded); // Output: Fajar&Muhammad=Amir
+      </script>
+   </body>
+</html>

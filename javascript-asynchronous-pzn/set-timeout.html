@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Set Timeout</title>
+   </head>
+   <body>
+      <script>
+         // Fungsi untuk menambahkan elemen h1 ke dalam body
+         function addElement() {
+            // Membuat elemen <h1> baru
+            const header = document.createElement("h1");
+
+            // Mengatur teks konten elemen <h1>
+            header.textContent = "Programmer Zaman Now";
+
+            // Menambahkan elemen <h1> ke dalam body dokumen
+            document.body.appendChild(header);
+         }
+
+         // Menjalankan fungsi addElement setelah 5000 milidetik (5 detik)
+         setTimeout(addElement, 5000);
+      </script>
+   </body>
+</html>

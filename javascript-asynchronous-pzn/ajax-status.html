@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Ajax</title>
+   </head>
+   <body>
+      <h1 id="response"></h1>
+      <script>
+            function displayResponse(json){
+            // Mendapatkan elemen HTML dengan id "response"
+            const header = document.getElementById("response");
+            // Menampilkan data dari respons JSON di dalam elemen HTML
+            header.textContent = json.response;
+         }
+
+         // Membuat instance baru dari XMLHttpRequest untuk melakukan permintaan AJAX
+         const ajax = new XMLHttpRequest();
+
+         // Membuka koneksi GET ke URL file JSON
+         ajax.open("GET", "api/index.json");
+
+         // Menambahkan event listener untuk menangani respons ketika permintaan selesai
+         ajax.addEventListener("load", function(){
+            // Memeriksa apakah status respons adalah 200 (OK)
+            if (ajax.status === 200) {
+               // Menguraikan teks respons JSON ke objek JavaScript
+               const json = JSON.parse(ajax.responseText);
+               // Memanggil fungsi untuk menampilkan data dari respons JSON
+               displayResponse(json);
+            } else {
+               // Menampilkan pesan kesalahan jika status respons tidak 200
+               displayResponse({
+                  response: `Terjadi kesalahan pada status ${ajax.status}`
+               });
+            }
+         });
+
+         // Mengirim permintaan AJAX
+         ajax.send();
+      </script>
+   </body>
+</html>

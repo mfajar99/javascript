@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Error Handling</title>
+   </head>
+   <body>
+      <script>
+         // Kelas MathUtil dengan metode statis untuk menjumlahkan angka
+         class MathUtil {
+            // Metode statis sum untuk menjumlahkan parameter yang diberikan
+            static sum(...numbers) {
+               // Jika tidak ada angka yang diberikan, lemparkan error
+               if (numbers.length === 0) {
+                  throw new Error("Total parameter harus lebih dari 0");
+               }
+
+               // Variabel untuk menyimpan total jumlah
+               let total = 0;
+               // Menjumlahkan semua angka yang diberikan
+               for (const number of numbers) {
+                  total += number;
+               }
+               return total;
+            }
+         }
+
+         // Menggunakan try-catch-finally untuk menangani kemungkinan error
+         try {
+            // Menghitung jumlah tanpa memberikan angka, yang akan menyebabkan error
+            console.info(MathUtil.sum());
+            console.info("Fajar");
+         } catch (error) {
+            // Menampilkan pesan error jika terjadi kesalahan
+            console.info(`Terjadi error : ${error.message}`);
+         } finally {
+            // Kode ini akan selalu dijalankan, baik error terjadi atau tidak
+            console.info("Program selesai");
+         }
+
+         // Menampilkan string "Muhammad" di konsol
+         console.info("Muhammad");
+
+         // Kelas Counter dengan properti private #counter
+         class Counter {
+            // Properti private #counter untuk menyimpan nilai counter
+            #counter = 1;
+
+            // Metode untuk mendapatkan nilai counter dan kemudian menambahkannya
+            next() {
+               try {
+                  return this.#counter;
+               } finally {
+                  // Menambah nilai counter setelah nilai dikembalikan
+                  this.#counter++;
+               }
+            }
+         }
+
+         // Membuat instance baru dari kelas Counter
+         const counter = new Counter();
+         // Menampilkan nilai counter dan kemudian menambahkannya
+         console.info(counter.next()); // 1
+         console.info(counter.next()); // 2
+         console.info(counter.next()); // 3
+         console.info(counter.next()); // 4
+         console.info(counter.next()); // 5
+      </script>
+   </body>
+</html>

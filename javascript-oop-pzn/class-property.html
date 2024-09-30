@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Class Contsructor</title>
+   </head>
+   <body>
+      <script>
+         // Mendefinisikan kelas 'Person' dengan konstruktor
+         class Person {
+            // Konstruktor kelas yang menerima parameter 'name' dan menyimpannya dalam properti 'name'
+            constructor(name) {
+               this.name = name;
+            }
+         }
+
+         // Membuat instance baru dari kelas 'Person' dengan nama "Fajar"
+         const fajar = new Person("Fajar");
+
+         // Menampilkan objek 'fajar' di konsol
+         console.info(fajar);
+
+         // Menampilkan properti 'name' dari objek 'fajar' di konsol
+         console.info(fajar.name);
+
+         // Membuat instance baru dari kelas 'Person' dengan nama "Andi"
+         const andi = new Person("Andi");
+
+         // Menampilkan objek 'andi' di konsol
+         console.info(andi);
+      </script>
+   </body>
+</html>

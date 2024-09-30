@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Operator Attribute Selector</title>
+   </head>
+   <body>
+      <div class="fajar">fajar</div>
+      <div class="fajarmuhammad">muhammad</div>
+      <div class="fajaramir">amir</div>
+
+      <script>
+         // Mengambil semua elemen <div> yang memiliki class yang dimulai dengan "fajar" dari dokumen HTML
+         const list = document.querySelectorAll("div[class^='fajar']");
+
+         // Menampilkan koleksi elemen yang ditemukan ke konsol
+         console.log(list);
+      </script>
+   </body>
+</html>

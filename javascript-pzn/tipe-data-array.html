@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Tipe Data Array</title>
+   </head>
+   <body>
+      <script>
+                 // Mendeklarasikan array kosong
+         let arrayKosong = [];
+
+         // Mendeklarasikan dan menginisialisasi array dengan beberapa nama
+         let arrayNama = ["Muhammad", "Fajar", "Amir"];
+
+         // Mendeklarasikan array kosong dan menambahkan elemen ke dalamnya
+         const names = [];
+         names.push("Fajar"); // Menambahkan "Fajar" ke array
+         names.push("Muhammad", "Amir"); // Menambahkan "Muhammad" dan "Amir" ke array
+         names.push("Budi", "Joko", "Rudi"); // Menambahkan "Budi", "Joko", dan "Rudi" ke array
+
+         // Menampilkan array dalam bentuk tabel untuk lebih mudah dibaca
+         console.table(names);
+
+         // Menampilkan elemen pertama, kedua, dan ketiga dari array
+         console.info(names[0]); // Menampilkan "Fajar"
+         console.info(names[1]); // Menampilkan "Muhammad"
+         console.info(names[2]); // Menampilkan "Amir"
+
+         // Mengubah elemen pertama, kedua, dan ketiga dalam array
+         names[0] = "Programmer"; // Mengubah "Fajar" menjadi "Programmer"
+         names[1] = "Desa"; // Mengubah "Muhammad" menjadi "Desa"
+         names[2] = "Now"; // Mengubah "Amir" menjadi "Now"
+
+         // Menampilkan array setelah pengubahan
+         console.table(names);
+
+         // Menghapus elemen keempat dari array (nilai tersebut menjadi undefined)
+         delete names[3]; // Menghapus elemen "Budi"
+
+         // Menampilkan array setelah elemen dihapus
+         console.table(names);
+
+         // Menambahkan elemen baru ke array
+         names.push("Budi Lagi"); // Menambahkan "Budi Lagi"
+
+         // Menampilkan array setelah menambahkan elemen baru
+         console.table(names);
+
+         // Mengubah elemen keempat yang sebelumnya dihapus menjadi "Diubah Lagi"
+         names[3] = "Diubah Lagi";
+
+         // Menambahkan beberapa elemen ke array
+         names.push(1, 2, 3, 4, 5); // Menambahkan angka 1, 2, 3, 4, dan 5
+
+         // Menambahkan array ke dalam array sebagai elemen
+         names.push(["Muhammad", "Fajar", "Amir"]); // Menambahkan array baru ke dalam array names
+
+         // Menampilkan array akhir dalam bentuk tabel
+         console.table(names);
+      </script>
+   </body>
+</html>

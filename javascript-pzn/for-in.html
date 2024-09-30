@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>For In</title>
+   </head>
+   <body>
+      <script>
+         // Mendefinisikan objek dengan beberapa properti
+         const person = {
+            firstName: "Muhammad",
+            middleName: "Fajar",
+            lastName: "Amir"
+         };
+
+         // Mengakses setiap properti dalam objek 'person' menggunakan loop 'for...in'
+         for (const property in person) {
+            // Menampilkan nama properti dan nilainya di dalam tag <p>
+            document.writeln(`<p>${property}: ${person[property]}</p>`);
+         }
+
+         // Mendefinisikan array dengan beberapa elemen
+         const names = ["Muhammad", "Fajar", "Amir"];
+
+         // Mengakses setiap indeks dalam array 'names' menggunakan loop 'for...in'
+         for (const index in names) {
+            // Menampilkan indeks dan nilai elemen array pada indeks tersebut di dalam tag <p>
+            document.writeln(`<p>${index}: ${names[index]}</p>`);
+         }
+      </script>
+   </body>
+</html>

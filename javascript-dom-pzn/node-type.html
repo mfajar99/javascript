@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Node Type</title>
+   </head>
+   <body>
+      Fajar Muhammad Amir
+      <!-- Ini Komentar -->
+      <h1>Ini Title</h1>
+
+      <script>
+         // Mengambil semua node anak dari elemen <body>
+         const nodes = document.body.childNodes;
+
+         // Iterasi melalui semua node anak dan menampilkan node dan jenisnya ke konsol
+         for (const node of nodes) {
+            console.log(`${node} : ${node.nodeType}`);
+         }
+      </script>
+   </body>
+</html>

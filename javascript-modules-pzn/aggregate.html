@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Aggregate</title>
+   </head>
+   <body>
+      <script type="module">
+         // Mengimpor modul dari file lain
+         import { Person, sayHello, sayGoodBy, sum } from "./scripts/aggregat.js";
+
+         // Membuat objek dari kelas Person
+         const person = new Person("Fajar"); // Membuat instance baru dari kelas Person dengan nama "Fajar"
+
+         // Menggunakan metode sayHello dari objek person
+         person.sayHello("Joko"); // Memanggil metode sayHello dari objek person, menyapa "Joko" dengan nama "Fajar"
+
+         // Menggunakan fungsi sayGoodBy
+         sayGoodBy("Fajar"); // Memanggil fungsi sayGoodBy untuk mengucapkan selamat tinggal kepada "Fajar"
+
+         // Menggunakan fungsi sayHello
+         sayHello("Fajar"); // Memanggil fungsi sayHello untuk menyapa "Fajar"
+
+         // Mencetak dua angka ke konsol
+         console.log(10, 10); // Menampilkan angka 10 dan 10 di konsol
+      </script>
+   </body>
+</html>

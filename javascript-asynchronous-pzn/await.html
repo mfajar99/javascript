@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Await</title>
+   </head>
+   <body>
+      <script>
+         // Fungsi yang mengembalikan Promise<JSON Product>
+         function getProduct() {
+            // Membuat request GET ke URL file JSON produk
+            const request = new Request("api/productt.json", {
+               method: "GET"
+            });
+
+            // Menggunakan fetch untuk mendapatkan respons dari request
+            const response = fetch(request);
+
+            // Mengembalikan Promise yang menyelesaikan dengan objek JSON produk
+            return response.then((response) => response.json());
+         }
+
+         // Fungsi yang mengembalikan Promise<String ProductName>
+         function getProductNamePromise() {
+            return new Promise(function (resolve, reject) {
+               // Mengambil produk menggunakan getProduct() dan mengembalikan nama produk
+               getProduct()
+                  .then((product) => resolve(product.name))
+                  .catch((error) => resolve("Product Not Found")); // Menangani kesalahan
+            });
+         }
+
+         // Fungsi async yang mengembalikan nama produk dengan menggunakan async/await
+         async function getProductNameAsync() {
+            try {
+               // Mengambil produk menggunakan getProduct() dan mengembalikan nama produk
+               const product = await getProduct();
+               return product.name;
+            } catch (error) {
+               // Menangani kesalahan dan mengembalikan pesan kesalahan
+               return "Product Not Found";
+            }
+         }
+
+         // Menggunakan getProductNamePromise dan menangani hasilnya
+         getProductNamePromise()
+            .then((productName) => console.info(productName));
+
+         // Menggunakan getProductNameAsync dan menangani hasilnya
+         getProductNameAsync()
+            .then((productName) => console.info(productName));
+      </script>
+   </body>
+</html>

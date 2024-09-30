@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Kata Kunci This</title>
+   </head>
+   <body>
+      <script>
+                 // Menampilkan nilai `this` di tingkat global
+         console.info(this);
+
+         // Mendefinisikan fungsi sample
+         function sample() {
+             // Menampilkan nilai `this` di dalam fungsi sample
+            console.info(this);
+
+             // Mendefinisikan fungsi inner di dalam fungsi sample
+            function inner() {
+               // Menampilkan nilai `this` di dalam fungsi inner
+               console.info(this);
+            }
+             // Memanggil fungsi inner dari dalam fungsi sample
+            inner();
+         }
+         // Memanggil fungsi sample
+         sample();
+
+         // Mendefinisikan objek person dengan metode sayHello
+         const person = {
+             name: "Fajar", // Properti name pada objek person
+            sayHello: function (value) {
+               // Menampilkan pesan dengan nilai `this.name` dari objek person
+               console.info(`Hello ${value} My Name is ${this.name}`);
+            }
+         };
+
+         // Memanggil metode sayHello pada objek person dengan argumen "Budi"
+         person.sayHello("Budi");
+         // Memanggil metode sayHello pada objek person dengan argumen "Andi"
+         person.sayHello("Andi");
+      </script>
+   </body>
+</html>

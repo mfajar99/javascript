@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Function Recursive</title>
+   </head>
+   <body>
+      <script>
+            // Faktorial menggunakan loop
+            function factorial(value) {
+                  let result = 1; // Inisialisasi variabel 'result' dengan nilai 1
+                  // Loop dari 1 hingga nilai yang diberikan
+               for (let i = 1; i <= value; i++) {
+                  result *= i; // Mengalikan 'result' dengan 'i' pada setiap iterasi
+               }
+               return result; // Mengembalikan hasil faktorial
+            }
+
+            // Menampilkan hasil faktorial dari 5 menggunakan loop
+            console.info(factorial(5)); // Output: 120 (1 * 2 * 3 * 4 * 5)
+            console.info(1 * 2 * 3 * 4 * 5); // Output: 120 (sebagai perbandingan)
+
+            // Faktorial menggunakan rekursi
+            function factorialRecursive(value) {
+                  // Basis rekursi: jika nilai adalah 1, kembalikan 1
+               if (value === 1) {
+                  return 1;
+               } else {
+                     // Memanggil dirinya sendiri dengan nilai yang berkurang satu
+                     return value * factorialRecursive(value - 1);
+               }
+            }
+
+            // Menampilkan hasil faktorial dari 5 menggunakan rekursi
+            console.info(factorialRecursive(5)); // Output: 120
+
+            // Contoh langkah-langkah rekursi
+            // factorialRecursive(5);
+            // 5 * factorialRecursive(4)
+            // 5 * 4 * factorialRecursive(3)
+            // 5 * 4 * 3 * factorialRecursive(2)
+            // 5 * 4 * 3 * 2 * factorialRecursive(1)
+            // 5 * 4 * 3 * 2 * 1 = 120
+
+            // Fungsi untuk mencetak angka dari nilai tertentu hingga 10 menggunakan rekursi
+            function cetakAngaka(value) {
+                  // Basis rekursi: jika nilai lebih besar dari 10, berhenti dan tampilkan "Selesai!"
+               if (value > 10) {
+                  console.info("Selesai!");
+                  return;
+               }
+                  // Menampilkan nilai saat ini
+               console.info(value);
+               // Memanggil dirinya sendiri dengan nilai yang ditambah satu
+               cetakAngaka(value + 1);
+         }
+
+            // Memanggil fungsi 'cetakAngaka' mulai dari 1
+            cetakAngaka(1);
+            // Output:
+            // 1
+            // 2
+            // 3
+            // ...
+            // 10
+            // Selesai!
+      </script>
+   </body>
+</html>

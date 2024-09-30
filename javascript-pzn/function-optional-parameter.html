@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Function Optional Parameter</title>
+   </head>
+   <body>
+      <script>
+         // Fungsi 'sayHello' menerima tiga parameter: 'firstName', 'middleName', dan 'lastName'
+         function sayHello(firstName, middleName, lastName) {
+            // Menampilkan nilai parameter 'firstName' di konsol
+            console.info(firstName);
+            // Menampilkan nilai parameter 'middleName' di konsol
+            console.info(middleName);
+            // Menampilkan nilai parameter 'lastName' di konsol
+            console.info(lastName);
+         }
+
+         // Memanggil 'sayHello' tanpa argumen apapun
+         // Semua parameter akan menjadi 'undefined' karena tidak ada nilai yang diberikan
+         sayHello();
+         // Output:
+         // undefined
+         // undefined
+         // undefined
+
+         // Memanggil 'sayHello' dengan satu argumen
+         // 'firstName' diisi dengan "Fajar", sementara 'middleName' dan 'lastName' menjadi 'undefined'
+         sayHello("Fajar");
+         // Output:
+         // Fajar
+         // undefined
+         // undefined
+
+         // Memanggil 'sayHello' dengan dua argumen
+         // 'firstName' diisi dengan "Muhammad", 'middleName' diisi dengan "Fajar", dan 'lastName' menjadi 'undefined'
+         sayHello("Muhammad", "Fajar");
+         // Output:
+         // Muhammad
+         // Fajar
+         // undefined
+
+         // Memanggil 'sayHello' dengan empat argumen
+         // 'firstName' diisi dengan "Muhammad", 'middleName' diisi dengan "Fajar", dan 'lastName' diisi dengan "Amir"
+         // Argumen keempat "Salam" diabaikan karena fungsi hanya menerima tiga parameter
+         sayHello("Muhammad", "Fajar", "Amir", "Salam");
+         // Output:
+         // Muhammad
+         // Fajar
+         // Amir
+      </script>
+   </body>
+</html>

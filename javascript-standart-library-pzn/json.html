@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>JSON</title>
+   </head>
+   <body>
+      <script>
+         // Definisikan objek 'person' dengan beberapa properti: firstName, middleName, lastName, address, dan hobbies.
+         const person = {
+            firstName: "Fajar",
+            middleName: "Muhammad",
+            lastName: "Amir",
+            address: {
+               country: "Indonesia",
+               city: "Sampang"
+            },
+            hobbies: [
+               "Coding", "Game", "Traveling"
+            ]
+         };
+
+         // Konversi objek 'person' menjadi string JSON
+         const json = JSON.stringify(person);
+         // Tampilkan string JSON ke konsol
+         console.log(json);
+
+         // Parsing string JSON kembali menjadi objek JavaScript
+         const jsonObject = JSON.parse(json);
+         // Tampilkan objek hasil parsing ke konsol
+         console.log(jsonObject);
+      </script>
+   </body>
+</html>

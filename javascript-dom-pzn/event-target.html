@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Event Target</title>
+   </head>
+   <body>
+      <input id="clickMe" type="button" value="Click Me!" />
+
+      <script>
+         // Mengambil elemen dengan ID "clickMe" dari dokumen HTML
+         const button = document.getElementById("clickMe");
+
+         // Menambahkan event listener untuk event "click"
+         button.addEventListener("click", function (){
+            // Mengatur atribut "value" dari elemen tombol menjadi "You Already Click Me!"
+            button.setAttribute("value", "You Already Click Me!");
+         });
+
+         // Menambahkan event listener lain untuk event "click"
+         button.addEventListener("click", function (){
+            // Mengatur atribut "value" dari elemen tombol menjadi "You Already Click Me!" (lagi)
+            button.setAttribute("value", "You Already Click Me!");
+            // Menampilkan pesan 'Button di Click' ke konsol
+            console.info('Button di Click');
+         });
+      </script>
+   </body>
+</html>

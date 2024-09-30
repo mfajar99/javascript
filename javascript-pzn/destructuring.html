@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Destructuring</title>
+   </head>
+   <body>
+      <script>
+            // Tanpa destructuring
+            // Mengakses elemen array secara manual
+            // const names = ["Fajar", "Muhammad", "Amir"];
+            // const firstName = names[0];
+            // const middleName = names[1];
+            // const lastName = names[2];
+
+            // Dengan destructuring
+         {
+            // Menggunakan destructuring array untuk mengambil elemen dari array
+            const names = ["Fajar", "Muhammad", "Amir", "Andi", "Budi"];
+
+            // Destructuring untuk mengambil elemen pertama, kedua, dan ketiga
+            // serta menyimpan elemen yang tersisa dalam array 'others'
+            const [firstName, middleName, lastName, ...others] = names;
+
+            // Mencetak hasil destructuring
+            console.info(firstName); // Output: Fajar
+            console.info(middleName); // Output: Muhammad
+            console.info(lastName); // Output: Amir
+            console.info(others); // Output: ["Andi", "Budi"]
+         }
+
+         {
+            // Destructuring pada objek dengan nested object
+            const person = {
+               firstName: "Fajar",
+               lastName: "Muhammad",
+               address: {
+                  street: "Jalan Belum Ada",
+                  city: "Jakarta",
+                  country: "Indonesia"
+               },
+               hobby: "Game",
+               channel: "Fajar Muhammad"
+            };
+
+            // Destructuring untuk mengambil nilai dari properti objek
+            // serta melakukan destructuring pada nested object 'address'
+            let { firstName, lastName, address: { city, street, country }, ...others } = person;
+
+            // Mencetak hasil destructuring
+            console.info(firstName); // Output: Fajar
+            console.info(lastName); // Output: Muhammad
+            console.info(city); // Output: Jakarta
+            console.info(street); // Output: Jalan Belum Ada
+            console.info(country); // Output: Indonesia
+            console.info(others); // Output: { hobby: "Game", channel: "Fajar Muhammad" }
+         }
+
+         {
+            // Destructuring function parameter
+            // Fungsi yang menerima objek sebagai parameter dan mendestructuring propertinya
+            function displayPerson({ firstName, middleName, lastName }) {
+               console.info(firstName); // Output: Fajar
+               console.info(middleName); // Output: Muhammad
+               console.info(lastName); // Output: Amir
+            }
+
+            const person = {
+               firstName: "Fajar",
+               middleName: "Muhammad",
+               lastName: "Amir"
+            };
+
+            // Memanggil fungsi dengan objek sebagai argumen
+            displayPerson(person);
+         }
+
+         {
+            // Destructuring array dalam parameter fungsi
+            // Fungsi yang menerima array sebagai parameter dan mendestructuring nilainya
+            function sum([first, second]) {
+               return first + second;
+            }
+
+            // Mencetak hasil dari fungsi sum
+            console.info(sum([10, 10])); // Output: 20
+            console.info(sum([20, 10])); // Output: 30
+         }
+
+         {
+            // Default value untuk destructuring array
+            const names = ["Fajar", "Muhammad", "Amir"];
+
+            // Destructuring dengan default value untuk elemen terakhir
+            const [firstName, middleName, lastName = "Budi"] = names;
+
+            // Mencetak hasil destructuring
+            console.info(firstName); // Output: Fajar
+            console.info(middleName); // Output: Muhammad
+            console.info(lastName); // Output: Amir (tidak terpengaruh default value karena elemen ada)
+         }
+
+         {
+            // Default value untuk destructuring object
+            const person = {
+               firstName: "Fajar",
+               lastName: "Amir"
+            };
+
+            // Destructuring dengan default value untuk properti yang tidak ada di objek
+            let { firstName, middleName = "Muhammad", lastName } = person;
+
+            // Mencetak hasil destructuring
+            console.info(firstName); // Output: Fajar
+            console.info(middleName); // Output: Muhammad (default value)
+            console.info(lastName); // Output: Amir
+         }
+
+         {
+            // Destructuring dengan nama variabel yang berbeda
+            const person = {
+               firstName: "Fajar",
+               middleName: "Muhammad",
+               lastName: "Amir"
+            };
+
+            // Destructuring dengan mengganti nama variabel hasil destructuring
+            let { firstName: namaDepan, middleName: namaTengah = "Muhammad", lastName: namaBelakang } = person;
+
+            // Mencetak hasil destructuring
+            console.info(namaDepan); // Output: Fajar
+            console.info(namaTengah); // Output: Muhammad
+            console.info(namaBelakang); // Output: Amir
+         }
+      </script>
+   </body>
+</html>

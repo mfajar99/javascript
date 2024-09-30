@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Continue</title>
+   </head>
+   <body>
+      <script>
+         // Loop untuk mencetak bilangan ganjil dari 1 sampai 100
+         for (let i = 1; i <= 100; i++) {
+            // Memeriksa apakah angka tersebut genap
+            if (i % 2 === 0) {
+               // Jika angka genap, lanjutkan ke iterasi berikutnya
+               continue;
+            }
+            // Jika angka ganjil, cetak di dalam elemen <p>
+            document.writeln(`<p>Perulangan Ganjil ${i}</p>`);
+         }
+
+         // Loop untuk mencetak bilangan genap dari 1 sampai 100
+         for (let i = 1; i <= 100; i++) {
+            // Memeriksa apakah angka tersebut ganjil
+            if (i % 2 !== 0) {
+               // Jika angka ganjil, lanjutkan ke iterasi berikutnya
+               continue;
+            }
+            // Jika angka genap, cetak di dalam elemen <p>
+            document.writeln(`<p>Perulangan Genap ${i}</p>`);
+         }
+      </script>
+   </body>
+</html>

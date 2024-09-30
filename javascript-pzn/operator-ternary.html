@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Operator Ternary</title>
+   </head>
+   <body>
+      <script>
+         // Kode tanpa menggunakan ternary operator
+         const nilai = 80; // Mendefinisikan variabel nilai dengan nilai 80
+         let ucapan; // Mendefinisikan variabel ucapan tanpa nilai awal
+
+         // Mengecek nilai untuk menentukan ucapan
+         if (nilai >= 75) {
+            // Jika nilai lebih besar atau sama dengan 75, atur ucapan ke "Selamat Anda Lulus"
+            ucapan = "Selamat Anda Lulus";
+         } else {
+            // Jika nilai kurang dari 75, atur ucapan ke "Silahkan Coba Lagi"
+            ucapan = "Silahkan Coba Lagi";
+         }
+
+         // Menampilkan ucapan di dokumen HTML
+         document.writeln(`<p>${ucapan}</p>`); // Akan menampilkan <p>Selamat Anda Lulus</p>
+
+         // Kode menggunakan ternary operator
+         // Ternary operator ? : adalah cara singkat untuk menulis kondisi if-else
+         ucapan = nilai >= 75 ? "Selamat Anda Lulus" : "Silahkan Coba Lagi";
+
+         // Menampilkan ucapan di dokumen HTML
+         document.writeln(`<p>${ucapan}</p>`); // Akan menampilkan <p>Selamat Anda Lulus</p>
+      </script>
+   </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Symbol</title>
+   </head>
+   <body>
+      <script>
+         {
+            // Membuat symbol unik dengan identifier
+            const firstName = Symbol("firstName");
+            const lastName = Symbol("lastName");
+
+            // Symbol adalah nilai yang unik, meskipun nama identifier-nya sama, mereka tidak akan sama
+            // console.log(firstName === lastName); // Output: false (symbol selalu unik)
+
+            // Membuat objek kosong
+            const person = {};
+
+            // Menambahkan property dengan key berbentuk symbol ke dalam object
+            person[firstName] = "Fajar";
+            person[lastName] = "Muhammad";
+
+            // Output: { [Symbol(firstName)]: 'Fajar', [Symbol(lastName)]: 'Muhammad' }
+            console.log(person);
+         }
+
+         {
+            // Symbol.for() digunakan untuk membuat symbol yang dapat dibagikan di seluruh kode
+            // Jika symbol dengan nama yang sama sudah ada, maka akan digunakan symbol yang sama
+            console.log(Symbol.for("firstName") === Symbol.for("firstName"));
+            // Output: true (karena symbol yang dibuat menggunakan Symbol.for() bisa di-refer kembali)
+
+            const person = {};
+
+            // Menambahkan property menggunakan Symbol.for()
+            person[Symbol.for("firstName")] = "Fajar";
+            person[Symbol.for("lastName")] = "Muhammad";
+
+            // Output: { [Symbol(firstName)]: 'Fajar', [Symbol(lastName)]: 'Muhammad' }
+            console.log(person);
+
+            // Mengakses nilai property menggunakan Symbol.for()
+            console.log(person[Symbol.for("firstName")]);  // Output: Fajar
+            console.log(person[Symbol.for("lastName")]);   // Output: Muhammad
+         }
+      </script>
+   </body>
+</html>
